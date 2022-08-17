@@ -39,12 +39,12 @@ class OperatingHours extends utils.Adapter {
 			administrative : "administrative"
 		};
 		this.operatingHours = {
-			milliseconds : {name:"milliseconds",write:true,unit:"ms"},
-			seconds : {name:"seconds",write:true,unit:"s"},
-			minutes : {name:"minutes",write:true,unit:"min"},
-			hours : {name:"hours",write:true,unit:"h"},
-			timestring_h_m :{name:"timestring_h_m",write:false,unit:"hh:mm"},
-			timestring_h_m_s :{name:"timestring_h_m_s",write:false,unit:"hh:mm:ss"}
+			milliseconds : {name:"milliseconds",type:"number",write:true,unit:"ms",def:0},
+			seconds : {name:"seconds",type:"number",write:true,unit:"s",def:0},
+			minutes : {name:"minutes",type:"number",write:true,unit:"min",def:0},
+			hours : {name:"hours",type:"number",write:true,unit:"h",def:0},
+			timestring_h_m :{name:"timestring_h_m",type:"string",write:false,unit:"hh:mm",def:""},
+			timestring_h_m_s :{name:"timestring_h_m_s",type:"string",write:false,unit:"hh:mm:ss",def:""}
 		};
 		this.administrative = {
 			enableCounting : {name:"enableCounting", write:true}
@@ -98,13 +98,13 @@ class OperatingHours extends utils.Adapter {
 		let countingEnabled = false;
 		const timestamp = Date.now();
 		if(this.timeouts.countingTimeout){
+			this.clearTimeout(this.timeouts.countingTimeout);
 			delete this.timeouts.countingTimeout;
 		}
 		for(const channel in this.configedChannels){
 			const channelObj = this.configedChannels[channel];
 			if(channelObj.administrative.enableCounting){
 				// Aktivierung des späteren timeout aufrufes
-				this.log.info("Durchlaufen");
 				countingEnabled = true;
 				this.setOperatingHours(channel, channelObj.operatingHours.milliseconds + (timestamp - channelObj.timestamp), timestamp);
 			}
@@ -147,12 +147,12 @@ class OperatingHours extends utils.Adapter {
 					type: "state",
 					common: {
 						name: operatinghour.name,
-						type: "number",
+						type: operatinghour.type,
 						role: "value",
 						read: true,
 						write: operatinghour.write,
 						unit: operatinghour.unit,
-						def:0
+						def:operatinghour.def
 					},
 					native: {},
 				});
