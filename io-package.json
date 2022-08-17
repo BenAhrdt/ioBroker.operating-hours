@@ -1,0 +1,80 @@
+{
+	"common": {
+		"name": "operating-hours",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "Operating-Hours",
+		"titleLang": {
+			"en": "Operating-Hours",
+			"de": "Betriebsstunden",
+			"ru": "Часы работы",
+			"pt": "Horas de funcionamento",
+			"nl": "Werk uren",
+			"fr": "Heures d'ouverture",
+			"it": "Ore di servizio",
+			"es": "Horas de funcionamiento",
+			"pl": "Godziny pracy",
+			"zh-cn": "营业时间"
+		},
+		"desc": {
+			"en": "counting the operationg hours of own created states",
+			"de": "Zählen der Betriebsstunden von selbst erstellten Zuständen",
+			"ru": "подсчет часов работы собственных созданных состояний",
+			"pt": "contando as horas de operação dos próprios estados criados",
+			"nl": "het tellen van de bedrijfsuren van eigen aangemaakte toestanden",
+			"fr": "compter les heures de fonctionnement des propres états créés",
+			"it": "contando le ore di funzionamento dei propri stati creati",
+			"es": "contando las horas de funcionamiento de los propios estados creados",
+			"pl": "zliczanie godzin pracy własnych utworzonych państw",
+			"zh-cn": "计算自己创建的状态的运行时间"
+		},
+		"authors": [
+			"BenAhrdt <bsahrdt@gmail.com>"
+		],
+		"keywords": [
+			"operating",
+			"hours",
+			"Betriebsstunden",
+			"Zähler",
+			"counter"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "operating-hours.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.operating-hours/main/admin/operating-hours.png",
+		"readme": "https://github.com/BenAhrdt/ioBroker.operating-hours/blob/main/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "metering",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "push",
+		"materialize": true,
+		"dependencies": [
+			{
+				"js-controller": ">=2.0.0"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
