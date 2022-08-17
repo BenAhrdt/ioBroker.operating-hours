@@ -3,6 +3,18 @@
         "name": "operating-hours",
         "version": "0.0.5",
         "news": {
+            "0.0.5": {
+                "en": "try for version 0.0.5",
+                "de": "versuchen Sie es mit Version 0.0.5",
+                "ru": "попробуй версию 0.0.5",
+                "pt": "tente para a versão 0.0.5",
+                "nl": "probeer voor versie 0.0.5",
+                "fr": "essayez la version 0.0.5",
+                "it": "prova con la versione 0.0.5",
+                "es": "prueba con la versión 0.0.5",
+                "pl": "wypróbuj wersję 0.0.5",
+                "zh-cn": "尝试版本 0.0.5"
+            },
             "0.0.4": {
                 "en": "try for version 0.0.4",
                 "de": "versuchen Sie es mit Version 0.0.4",
