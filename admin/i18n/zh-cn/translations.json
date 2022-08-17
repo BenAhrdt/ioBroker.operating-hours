@@ -1,5 +1,6 @@
 {
-	"operating-hours adapter settings": "operating-hours的适配器设置",
-	"option1": "选项1",
-	"option2": "选项2"
+    "operating-hours adapter settings": "工作时间的适配器设置",
+    "states": "状态",
+    "mainSettings": "主要设置",
+    "mainInformation": "在下面输入要执行运行时间测量的状态的所需名称。"
 }

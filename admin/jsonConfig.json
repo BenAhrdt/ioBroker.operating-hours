@@ -1,0 +1,31 @@
+{
+    "i18n": true,
+    "items":{
+        "Header": {
+            "newLine": true,
+            "type": "header",
+            "text": "mainSettings",
+            "sm": 12,
+            "size": 2
+        },
+        "Information":{
+            "newLine":true,
+            "type": "staticText",
+            "label": "mainInformation"
+        },
+        "statesTable":{
+            "type":"table",
+            "sm":12,
+            "items":[
+                {
+                    "type": "text",
+                    "attr": "state",
+                    "title": "states",
+                    "filter": true,
+                    "sort": false,
+                    "allowAddByFilter": true
+                }
+            ]
+        }
+    }
+ }

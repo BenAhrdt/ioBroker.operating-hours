@@ -1,5 +1,6 @@
 {
-	"operating-hours adapter settings": "Ajustes del adaptador para operating-hours",
-	"option1": "Opción 1",
-	"option2": "opcion 2"
+    "operating-hours adapter settings": "Ajustes del adaptador para las horas de funcionamiento",
+    "states": "estados",
+    "mainSettings": "ajustes principales",
+    "mainInformation": "Ingrese los nombres deseados de los estados a continuación para los cuales se debe realizar una medición de horas de funcionamiento."
 }

@@ -1,5 +1,6 @@
 {
-	"operating-hours adapter settings": "Adapterinstellingen voor operating-hours",
-	"option1": "Optie 1",
-	"option2": "Optie 2"
+    "operating-hours adapter settings": "Adapterinstellingen voor bedrijfsuren",
+    "states": "staten",
+    "mainSettings": "belangrijkste instellingen",
+    "mainInformation": "Vul hieronder de gewenste namen in van de toestanden waarvoor een bedrijfsurenmeting moet worden uitgevoerd."
 }

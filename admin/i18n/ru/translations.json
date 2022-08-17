@@ -1,5 +1,6 @@
 {
-	"operating-hours adapter settings": "Настройки адаптера для operating-hours",
-	"option1": "Опция 1",
-	"option2": "вариант 2"
+    "operating-hours adapter settings": "Настройки адаптера для рабочих часов",
+    "states": "состояния",
+    "mainSettings": "Основные параметры",
+    "mainInformation": "Введите ниже желаемые названия состояний, для которых должно быть выполнено измерение часов работы."
 }

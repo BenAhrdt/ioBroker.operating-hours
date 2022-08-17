@@ -1,5 +1,6 @@
 {
 	"operating-hours adapter settings": "Adapter settings for operating-hours",
-	"option1": "option1",
-	"option2": "option2"
+	"states": "states",
+	"mainSettings": "main settings",
+	"mainInformation": "Enter the desired names of the states below for which an operating hours measurement is to be carried out."
 }

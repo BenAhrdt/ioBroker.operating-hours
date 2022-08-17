@@ -1,5 +1,6 @@
 {
-	"operating-hours adapter settings": "Adaptereinstellungen für operating-hours",
-	"option1": "Option 1",
-	"option2": "Option 2"
+    "operating-hours adapter settings": "Adaptereinstellungen für Betriebsstunden",
+    "states": "Zustände",
+    "mainSettings": "Haupteinstellungen",
+    "mainInformation": "Geben Sie nachfolgend die gewünschten Namen der states ein, für welche eine Betriebsstundenmessung durchgeführt werden soll"
 }

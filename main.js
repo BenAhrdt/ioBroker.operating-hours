@@ -26,6 +26,46 @@ class OperatingHours extends utils.Adapter {
 		// this.on("objectChange", this.onObjectChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+
+		this.AdapterObjectsAtStart = {};
+
+		this.configedChannels = {};
+		this.internalIds = {
+			state: "state",
+			timestamp : "timestamp"
+		};
+		this.channelFolders = {
+			operatingHours : "operatingHours",
+			administrative : "administrative"
+		};
+		this.operatingHours = {
+			milliseconds : {name:"milliseconds",write:true,unit:"ms"},
+			seconds : {name:"seconds",write:true,unit:"s"},
+			minutes : {name:"minutes",write:true,unit:"min"},
+			hours : {name:"hours",write:true,unit:"h"},
+			timestring_h_m :{name:"timestring_h_m",write:false,unit:"hh:mm"},
+			timestring_h_m_s :{name:"timestring_h_m_s",write:false,unit:"hh:mm:ss"}
+		};
+		this.administrative = {
+			enableCounting : {name:"enableCounting", write:true}
+		};
+
+		this.timeouts = {};
+		this.timeoutIds = {
+			countingTimeout : "countingTimeout"
+		};
+		this.timeoutValues = {
+			countingTimeout : 6000
+		};
+	}
+
+	// Clear all Timeouts, if there are some
+	clearAllTimeouts(){
+		for(const myTimeout in this.timeouts)
+		{
+			this.clearTimeout(this.timeouts[myTimeout]);
+			delete this.timeouts[myTimeout];
+		}
 	}
 
 	/**
@@ -34,55 +74,201 @@ class OperatingHours extends utils.Adapter {
 	async onReady() {
 		// Initialize your adapter here
 
-		// The adapters config (in the instance object everything under the attribute "native") is accessible via
-		// this.config:
-		this.log.info("config option1: " + this.config.option1);
-		this.log.info("config option2: " + this.config.option2);
+		// Generating the configed id internal (cleared)
+		for(const element of this.config.statesTable){
+			if(!this.configedChannels[this.getChannelId(element[this.internalIds.state])]){
+				this.configedChannels[this.getChannelId(element[this.internalIds.state])] = {};
+			}
+		}
 
-		/*
-		For every state in the system there has to be also an object of type state
-		Here a simple template for a boolean variable named "testVariable"
-		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-		*/
-		await this.setObjectNotExistsAsync("testVariable", {
-			type: "state",
-			common: {
-				name: "testVariable",
-				type: "boolean",
-				role: "indicator",
-				read: true,
-				write: true,
-			},
-			native: {},
-		});
+		// delete not configutred states
+		this.delNotConfiguredStates();
 
-		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-		this.subscribeStates("testVariable");
-		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
-		// this.subscribeStates("lights.*");
-		// Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
-		// this.subscribeStates("*");
+		// Create configured states if not created
+		await this.createInternalStates();
 
-		/*
-			setState examples
-			you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-		*/
-		// the variable testVariable is set to true as command (ack=false)
-		await this.setStateAsync("testVariable", true);
+		// Subscribe all internal states
+		this.subscribeStates("*");
 
-		// same thing, but the value is flagged "ack"
-		// ack should be always set to true if the value is received from or acknowledged from the target system
-		await this.setStateAsync("testVariable", { val: true, ack: true });
+		// countup the enabled channels
+		this.counting();
+	}
 
-		// same thing, but the state is deleted after 30s (getState will return null afterwards)
-		await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
+	counting(){
+		let countingEnabled = false;
+		const timestamp = Date.now();
+		if(this.timeouts.countingTimeout){
+			delete this.timeouts.countingTimeout;
+		}
+		for(const channel in this.configedChannels){
+			const channelObj = this.configedChannels[channel];
+			if(channelObj.administrative.enableCounting){
+				// Aktivierung des späteren timeout aufrufes
+				this.log.info("Durchlaufen");
+				countingEnabled = true;
+				this.setOperatingHours(channel, channelObj.operatingHours.milliseconds + (timestamp - channelObj.timestamp), timestamp);
+			}
+		}
+		if(countingEnabled){
+			this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.timeoutValues.countingTimeout);
+		}
+	}
 
-		// examples for the checkPassword/checkGroup functions
-		let result = await this.checkPasswordAsync("admin", "iobroker");
-		this.log.info("check user admin pw iobroker: " + result);
+	// creates internal states
+	async createInternalStates(){
+		for(const channel in this.configedChannels){
+			// create channel
+			await this.setObjectNotExistsAsync(`${channel}`,{
+				type:"channel",
+				common:{
+					name: channel
+				},
+				native : {},
+			});
+			if(!this.configedChannels[channel][this.internalIds.timestamp]){
+				this.configedChannels[channel][this.internalIds.timestamp] = {};
+			}
+			this.configedChannels[channel].timestamp = Date.now();
+			// create operating hours folder
+			await this.setObjectNotExistsAsync(`${channel}.${this.channelFolders.operatingHours}`,{
+				type:"folder",
+				common:{
+					name: this.channelFolders.operatingHours
+				},
+				native : {},
+			});
+			if(!this.configedChannels[channel][this.channelFolders.operatingHours]){
+				this.configedChannels[channel][this.channelFolders.operatingHours] ={};
+			}
 
-		result = await this.checkGroupAsync("admin", "admin");
-		this.log.info("check group user admin group admin: " + result);
+			// Create operating hour states
+			for( const operatinghour of Object.values(this.operatingHours)){
+				await this.setObjectNotExistsAsync(`${channel}.${this.channelFolders.operatingHours}.${operatinghour.name}`,{
+					type: "state",
+					common: {
+						name: operatinghour.name,
+						type: "number",
+						role: "value",
+						read: true,
+						write: operatinghour.write,
+						unit: operatinghour.unit,
+						def:0
+					},
+					native: {},
+				});
+				if(!this.configedChannels[channel][this.channelFolders.operatingHours][operatinghour.name]){
+					this.configedChannels[channel][this.channelFolders.operatingHours][operatinghour.name] ={};
+				}
+				const state = await this.getStateAsync(`${channel}.${this.channelFolders.operatingHours}.${operatinghour.name}`);
+				if(state){
+					this.configedChannels[channel][this.channelFolders.operatingHours][operatinghour.name] = state.val;
+				}
+				else{
+					this.configedChannels[channel][this.channelFolders.operatingHours][operatinghour.name] = 0;
+				}
+			}
+
+			// create administrative folder
+			await this.setObjectNotExistsAsync(`${channel}.${this.channelFolders.administrative}`,{
+				type:"folder",
+				common:{
+					name: this.channelFolders.administrative
+				},
+				native : {},
+			});
+			if(!this.configedChannels[channel][this.channelFolders.administrative]){
+				this.configedChannels[channel][this.channelFolders.administrative] ={};
+			}
+			// Create administrative states
+			for( const administrative of Object.values(this.administrative)){
+				await this.setObjectNotExistsAsync(`${channel}.${this.channelFolders.administrative}.${administrative.name}`,{
+					type: "state",
+					common: {
+						name: administrative.name,
+						type: "boolean",
+						role: "value",
+						read: true,
+						write: administrative.write,
+						def: false
+					},
+					native: {},
+				});
+				if(!this.configedChannels[channel][this.channelFolders.administrative][administrative.name]){
+					this.configedChannels[channel][this.channelFolders.administrative][administrative.name] ={};
+				}
+				const state = await this.getStateAsync(`${channel}.${this.channelFolders.administrative}.${administrative.name}`);
+				if(state){
+					this.configedChannels[channel][this.channelFolders.administrative][administrative.name] = state.val;
+				}
+				else{
+					this.configedChannels[channel][this.channelFolders.administrative][administrative.name] = false;
+				}
+			}
+
+		}
+	}
+
+	getChannelId(configedId){
+		return (configedId || "").replace(this.FORBIDDEN_CHARS, "_").replace(/[-\s]/g, "_");
+	}
+
+	// deletes not configured states
+	async delNotConfiguredStates()
+	{
+		// Get all objects in the adapter (later)
+		this.AdapterObjectsAtStart = await this.getAdapterObjectsAsync();
+		let activeString = "";
+		for(const channel in this.configedChannels){
+			// Operating hours löschen
+			for(const state in this.operatingHours){
+				activeString = `${this.namespace}.${channel}.${this.channelFolders.operatingHours}.${state}`;
+				delete this.AdapterObjectsAtStart[activeString];
+			}
+			activeString = `${this.namespace}.${channel}.${this.channelFolders.operatingHours}`;
+			delete this.AdapterObjectsAtStart[activeString];
+
+			// Administrative löschen
+			for(const state in this.administrative){
+				activeString = `${this.namespace}.${channel}.${this.channelFolders.administrative}.${state}`;
+				delete this.AdapterObjectsAtStart[activeString];
+			}
+			activeString = `${this.namespace}.${channel}.${this.channelFolders.administrative}`;
+			delete this.AdapterObjectsAtStart[activeString];
+
+			// Channel löschen
+			activeString = `${this.namespace}.${channel}`;
+			delete this.AdapterObjectsAtStart[activeString];
+		}
+
+		// delete the remaining states
+		for(const state in this.AdapterObjectsAtStart){
+			this.delObjectAsync(state);
+		}
+	}
+
+
+	setOperatingHours(channel,milliseconds,ts){
+		// Berechenn der Werte
+		const seconds = milliseconds/1000;
+		const minutes = milliseconds/60000;
+		const hours = milliseconds/3600000;
+		const h_m = ("00" + Math.trunc(hours).toString()).slice(-2) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2);
+		const h_m_s = ("00" + Math.trunc(hours).toString()).slice(-2) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2) + ":" + ("00" + Math.trunc((seconds%60)).toString()).slice(-2);
+
+		// Schreiben der states
+		this.configedChannels[channel].timestamp = ts;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.milliseconds.name}`,milliseconds,true);
+		this.configedChannels[channel].operatingHours.milliseconds = milliseconds;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.seconds.name}`,seconds,true);
+		this.configedChannels[channel].operatingHours.seconds = seconds;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.minutes.name}`,minutes,true);
+		this.configedChannels[channel].operatingHours.minutes = minutes;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.hours.name}`,hours,true);
+		this.configedChannels[channel].operatingHours.hours = hours;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.timestring_h_m.name}`,h_m,true);
+		this.configedChannels[channel].operatingHours.timestring_h_m = h_m;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.timestring_h_m_s.name}`,h_m_s,true);
+		this.configedChannels[channel].operatingHours.timestring_h_m_s = h_m_s;
 	}
 
 	/**
@@ -96,29 +282,12 @@ class OperatingHours extends utils.Adapter {
 			// clearTimeout(timeout2);
 			// ...
 			// clearInterval(interval1);
-
+			this.clearAllTimeouts();
 			callback();
 		} catch (e) {
 			callback();
 		}
 	}
-
-	// If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
-	// You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
-	// /**
-	//  * Is called if a subscribed object changes
-	//  * @param {string} id
-	//  * @param {ioBroker.Object | null | undefined} obj
-	//  */
-	// onObjectChange(id, obj) {
-	// 	if (obj) {
-	// 		// The object was changed
-	// 		this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-	// 	} else {
-	// 		// The object was deleted
-	// 		this.log.info(`object ${id} deleted`);
-	// 	}
-	// }
 
 	/**
 	 * Is called if a subscribed state changes
@@ -127,32 +296,70 @@ class OperatingHours extends utils.Adapter {
 	 */
 	onStateChange(id, state) {
 		if (state) {
-			// The state was changed
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+			// Es werden nur Werte beachtet, welche mit ack = false geschrieben wurden.
+			if(!state.ack){
+
+				const newId = id.substring(this.namespace.length + 1,id.length);
+				const channel = newId.substring(0,newId.indexOf("."));
+				// Prüfen, ob das enableCounting geändert wurde
+				if(newId.indexOf(this.administrative.enableCounting.name) !== -1){
+					// Zuweisen des neuen States
+					const lastState = this.configedChannels[channel][this.channelFolders.administrative].enableCounting;
+					this.configedChannels[channel][this.channelFolders.administrative].enableCounting = state.val;
+					this.setState(`${channel}.${this.channelFolders.administrative}.${this.administrative.enableCounting.name}`,state.val,true);
+
+					// Abfrage, ob der neue Wert true ist
+					if(state.val){
+						// Nur bei vorherigem false wird die aktuelle Zeit gesetzt.
+						if(!lastState){
+							this.configedChannels[channel].timestamp = state.ts;
+							if(!this.timeouts.countingTimeout){
+								this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.timeoutValues.countingTimeout);
+							}
+						}
+					}
+					else{
+						if(this.timeouts.countingTimeout){
+							this.clearTimeout(this.timeouts.countingTimeout);
+							delete this.timeouts.countingTimeout;
+						}
+						this.counting();
+						this.setOperatingHours(channel, this.configedChannels[channel].operatingHours.milliseconds + (state.ts - this.configedChannels[channel].timestamp), state.ts);
+					}
+				}
+
+				// Prüfen, ob sich ein Betriebsstundenzähler geändert hat
+				else if(newId.indexOf(this.channelFolders.operatingHours) !== -1){
+					// Nun wird noch geprüft,welcher Betriebsstundenwert geändert wurde => Somitkann dieser in ms umgerechnet werden.
+					let milliseconds = 0;
+					if(typeof(state.val) === "number"){ // auf den Type number prüfen
+						if(newId.indexOf(this.operatingHours.milliseconds.name) !== -1){
+							milliseconds = state.val;
+						}
+						else if(newId.indexOf(this.operatingHours.seconds.name) !== -1){
+							if(state.val !== null){
+								milliseconds = state.val * 1000;
+							}
+						}
+						else if(newId.indexOf(this.operatingHours.minutes.name) !== -1){
+							if(state.val !== null){
+								milliseconds = state.val * 60000;
+							}
+						}
+						else if(newId.indexOf(this.operatingHours.hours.name) !== -1){
+							if(state.val !== null){
+								milliseconds = state.val * 3600000;
+							}
+						}
+						this.setOperatingHours(channel,milliseconds,state.ts);
+					}
+				}
+			}
 		} else {
 			// The state was deleted
 			this.log.info(`state ${id} deleted`);
 		}
 	}
-
-	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
-	// /**
-	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
-	//  * Using this method requires "common.messagebox" property to be set to true in io-package.json
-	//  * @param {ioBroker.Message} obj
-	//  */
-	// onMessage(obj) {
-	// 	if (typeof obj === "object" && obj.message) {
-	// 		if (obj.command === "send") {
-	// 			// e.g. send email or pushover or whatever
-	// 			this.log.info("send command");
-
-	// 			// Send response in callback if required
-	// 			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
-	// 		}
-	// 	}
-	// }
-
 }
 
 if (require.main !== module) {
