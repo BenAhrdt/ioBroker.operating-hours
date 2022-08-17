@@ -1,134 +1,146 @@
 {
-    "common": {
-        "name": "operating-hours",
-        "version": "0.0.5",
-        "news": {
-            "0.0.5": {
-                "en": "try for version 0.0.5",
-                "de": "versuchen Sie es mit Version 0.0.5",
-                "ru": "попробуй версию 0.0.5",
-                "pt": "tente para a versão 0.0.5",
-                "nl": "probeer voor versie 0.0.5",
-                "fr": "essayez la version 0.0.5",
-                "it": "prova con la versione 0.0.5",
-                "es": "prueba con la versión 0.0.5",
-                "pl": "wypróbuj wersję 0.0.5",
-                "zh-cn": "尝试版本 0.0.5"
-            },
-            "0.0.4": {
-                "en": "try for version 0.0.4",
-                "de": "versuchen Sie es mit Version 0.0.4",
-                "ru": "попробуй версию 0.0.4",
-                "pt": "tente para a versão 0.0.4",
-                "nl": "probeer voor versie 0.0.4",
-                "fr": "essayez la version 0.0.4",
-                "it": "prova con la versione 0.0.4",
-                "es": "prueba con la versión 0.0.4",
-                "pl": "wypróbuj wersję 0.0.4",
-                "zh-cn": "尝试版本 0.0.4"
-            },
-            "0.0.3": {
-                "en": "try for version 0.0.3",
-                "de": "versuchen Sie es mit Version 0.0.3",
-                "ru": "попробуй версию 0.0.3",
-                "pt": "tente para a versão 0.0.3",
-                "nl": "probeer voor versie 0.0.3",
-                "fr": "essayez la version 0.0.3",
-                "it": "prova con la versione 0.0.3",
-                "es": "prueba con la versión 0.0.3",
-                "pl": "wypróbuj wersję 0.0.3",
-                "zh-cn": "尝试版本 0.0.3"
-            },
-            "0.0.2": {
-                "en": "try for version 0.0.2",
-                "de": "versuchen Sie es mit Version 0.0.2",
-                "ru": "попробуй версию 0.0.2",
-                "pt": "tente para a versão 0.0.2",
-                "nl": "probeer voor versie 0.0.2",
-                "fr": "essayez la version 0.0.2",
-                "it": "prova con la versione 0.0.2",
-                "es": "prueba con la versión 0.0.2",
-                "pl": "wypróbuj wersję 0.0.2",
-                "zh-cn": "尝试版本 0.0.2"
-            },
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
-            }
-        },
-        "title": "Operating-Hours",
-        "titleLang": {
-            "en": "Operating-Hours",
-            "de": "Betriebsstunden",
-            "ru": "Часы работы",
-            "pt": "Horas de funcionamento",
-            "nl": "Werk uren",
-            "fr": "Heures d'ouverture",
-            "it": "Ore di servizio",
-            "es": "Horas de funcionamiento",
-            "pl": "Godziny pracy",
-            "zh-cn": "营业时间"
-        },
-        "desc": {
-            "en": "counting the operationg hours of own created states",
-            "de": "Zählen der Betriebsstunden von selbst erstellten Zuständen",
-            "ru": "подсчет часов работы собственных созданных состояний",
-            "pt": "contando as horas de operação dos próprios estados criados",
-            "nl": "het tellen van de bedrijfsuren van eigen aangemaakte toestanden",
-            "fr": "compter les heures de fonctionnement des propres états créés",
-            "it": "contando le ore di funzionamento dei propri stati creati",
-            "es": "contando las horas de funcionamiento de los propios estados creados",
-            "pl": "zliczanie godzin pracy własnych utworzonych państw",
-            "zh-cn": "计算自己创建的状态的运行时间"
-        },
-        "authors": [
-            "BenAhrdt <bsahrdt@gmail.com>"
-        ],
-        "keywords": [
-            "operating",
-            "hours",
-            "Betriebsstunden",
-            "Zähler",
-            "counter"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "operating-hours.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.operating-hours/main/admin/operating-hours.png",
-        "readme": "https://github.com/BenAhrdt/ioBroker.operating-hours/blob/main/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "metering",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "push",
-        "adminUI": {
-            "config": "json"
-        },
-        "globalDependencies": [
-            {
-                "admin": ">=6.2.14"
-            }
-        ],
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ]
+  "common": {
+    "name": "operating-hours",
+    "version": "0.0.6",
+    "news": {
+      "0.0.6": {
+        "en": "release with plugins",
+        "de": "veröffentlichung mit plugins",
+        "ru": "релиз с плагинами",
+        "pt": "lançamento com plugins",
+        "nl": "verlaat",
+        "fr": "libération avec des plugins",
+        "it": "rilascio con plugin",
+        "es": "liberación con plugins",
+        "pl": "uwalnianie z wtyczki",
+        "zh-cn": "皮卢金的释放"
+      },
+      "0.0.5": {
+        "en": "try for version 0.0.5",
+        "de": "versuchen Sie es mit Version 0.0.5",
+        "ru": "попробуй версию 0.0.5",
+        "pt": "tente para a versão 0.0.5",
+        "nl": "probeer voor versie 0.0.5",
+        "fr": "essayez la version 0.0.5",
+        "it": "prova con la versione 0.0.5",
+        "es": "prueba con la versión 0.0.5",
+        "pl": "wypróbuj wersję 0.0.5",
+        "zh-cn": "尝试版本 0.0.5"
+      },
+      "0.0.4": {
+        "en": "try for version 0.0.4",
+        "de": "versuchen Sie es mit Version 0.0.4",
+        "ru": "попробуй версию 0.0.4",
+        "pt": "tente para a versão 0.0.4",
+        "nl": "probeer voor versie 0.0.4",
+        "fr": "essayez la version 0.0.4",
+        "it": "prova con la versione 0.0.4",
+        "es": "prueba con la versión 0.0.4",
+        "pl": "wypróbuj wersję 0.0.4",
+        "zh-cn": "尝试版本 0.0.4"
+      },
+      "0.0.3": {
+        "en": "try for version 0.0.3",
+        "de": "versuchen Sie es mit Version 0.0.3",
+        "ru": "попробуй версию 0.0.3",
+        "pt": "tente para a versão 0.0.3",
+        "nl": "probeer voor versie 0.0.3",
+        "fr": "essayez la version 0.0.3",
+        "it": "prova con la versione 0.0.3",
+        "es": "prueba con la versión 0.0.3",
+        "pl": "wypróbuj wersję 0.0.3",
+        "zh-cn": "尝试版本 0.0.3"
+      },
+      "0.0.2": {
+        "en": "try for version 0.0.2",
+        "de": "versuchen Sie es mit Version 0.0.2",
+        "ru": "попробуй версию 0.0.2",
+        "pt": "tente para a versão 0.0.2",
+        "nl": "probeer voor versie 0.0.2",
+        "fr": "essayez la version 0.0.2",
+        "it": "prova con la versione 0.0.2",
+        "es": "prueba con la versión 0.0.2",
+        "pl": "wypróbuj wersję 0.0.2",
+        "zh-cn": "尝试版本 0.0.2"
+      },
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版"
+      }
     },
-    "native": {
-        "statesTable": []
+    "title": "Operating-Hours",
+    "titleLang": {
+      "en": "Operating-Hours",
+      "de": "Betriebsstunden",
+      "ru": "Часы работы",
+      "pt": "Horas de funcionamento",
+      "nl": "Werk uren",
+      "fr": "Heures d'ouverture",
+      "it": "Ore di servizio",
+      "es": "Horas de funcionamiento",
+      "pl": "Godziny pracy",
+      "zh-cn": "营业时间"
     },
-    "objects": [],
-    "instanceObjects": []
+    "desc": {
+      "en": "counting the operationg hours of own created states",
+      "de": "Zählen der Betriebsstunden von selbst erstellten Zuständen",
+      "ru": "подсчет часов работы собственных созданных состояний",
+      "pt": "contando as horas de operação dos próprios estados criados",
+      "nl": "het tellen van de bedrijfsuren van eigen aangemaakte toestanden",
+      "fr": "compter les heures de fonctionnement des propres états créés",
+      "it": "contando le ore di funzionamento dei propri stati creati",
+      "es": "contando las horas de funcionamiento de los propios estados creados",
+      "pl": "zliczanie godzin pracy własnych utworzonych państw",
+      "zh-cn": "计算自己创建的状态的运行时间"
+    },
+    "authors": [
+      "BenAhrdt <bsahrdt@gmail.com>"
+    ],
+    "keywords": [
+      "operating",
+      "hours",
+      "Betriebsstunden",
+      "Zähler",
+      "counter"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "operating-hours.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.operating-hours/main/admin/operating-hours.png",
+    "readme": "https://github.com/BenAhrdt/ioBroker.operating-hours/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "metering",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "globalDependencies": [
+      {
+        "admin": ">=6.2.14"
+      }
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">=2.0.0"
+      }
+    ]
+  },
+  "native": {
+    "statesTable": []
+  },
+  "objects": [],
+  "instanceObjects": []
 }

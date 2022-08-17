@@ -19,8 +19,7 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS** this is a test 
+### 0.0.6 (2022-08-17) this is a test 
 * (BenAhrdt) release with plugins
 
 ### 0.0.5 (2022-08-17)
