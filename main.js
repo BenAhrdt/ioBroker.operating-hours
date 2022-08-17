@@ -147,7 +147,7 @@ class OperatingHours extends utils.Adapter {
 					type: "state",
 					common: {
 						name: operatinghour.name,
-						type: operatinghour.type,
+						type: "number",
 						role: "value",
 						read: true,
 						write: operatinghour.write,
