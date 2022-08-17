@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "operating-hours",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "news": {
             "0.0.4": {
                 "en": "try for version 0.0.4",
