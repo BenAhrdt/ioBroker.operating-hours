@@ -19,6 +19,10 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS** disable counting improoved
+* (BenAhrdt) double disable counting is not possible anymore
+
 ### 0.0.7 (2022-08-18) Dependencie changed
 * (BenAhrdt) implements ids for Other data states (with folders)
 * (BenAhrdt) the stringlength of the hours will be assigned by itself

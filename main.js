@@ -321,7 +321,6 @@ class OperatingHours extends utils.Adapter {
 				// Endung der id und den channel herausfiltern
 				const idExtention = id.substring(beforeLastIndex,id.length);
 				const channel = id.substring(this.namespace.length + 1,beforeLastIndex - 1); // -1, wegen dem letzten Punkt für die foldertrennung
-				this.log.info(channel);
 				// Prüfen, ob das enableCounting geändert wurde
 				if(idExtention.indexOf(this.administrative.enableCounting.name) !== -1){
 					// Zuweisen des neuen States
@@ -329,23 +328,23 @@ class OperatingHours extends utils.Adapter {
 					this.configedChannels[channel][this.channelFolders.administrative].enableCounting = state.val;
 					this.setState(`${channel}.${this.channelFolders.administrative}.${this.administrative.enableCounting.name}`,state.val,true);
 
-					// Abfrage, ob der neue Wert true ist
-					if(state.val){
-						// Nur bei vorherigem false wird die aktuelle Zeit gesetzt.
-						if(!lastState){
+					// Abfrage, ob sich der Wert geändert hat (Nur dann, wir etwas unternommen)
+					if(!lastState){
+						// Abfrage, ob der neue Wert true ist
+						if(state.val){
 							this.configedChannels[channel].timestamp = state.ts;
 							if(!this.timeouts.countingTimeout){
 								this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.timeoutValues.countingTimeout);
 							}
 						}
-					}
-					else{
-						if(this.timeouts.countingTimeout){
-							this.clearTimeout(this.timeouts.countingTimeout);
-							delete this.timeouts.countingTimeout;
+						else{
+							if(this.timeouts.countingTimeout){
+								this.clearTimeout(this.timeouts.countingTimeout);
+								delete this.timeouts.countingTimeout;
+							}
+							this.counting();
+							this.setOperatingHours(channel, this.configedChannels[channel].operatingHours.milliseconds + (state.ts - this.configedChannels[channel].timestamp), state.ts);
 						}
-						this.counting();
-						this.setOperatingHours(channel, this.configedChannels[channel].operatingHours.milliseconds + (state.ts - this.configedChannels[channel].timestamp), state.ts);
 					}
 				}
 
