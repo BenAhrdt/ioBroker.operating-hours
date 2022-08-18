@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "news": {
+      "0.0.8": {
+        "en": "double disable counting is not possible anymore",
+        "de": "doppeldisable zählen ist nicht mehr möglich",
+        "ru": "двойное отключение уже не возможно",
+        "pt": "contagem de desabilitação dupla não é mais possível",
+        "nl": "dubbele disable counting is niet meer mogelijk",
+        "fr": "le comptage double désactive n'est plus possible",
+        "it": "doppio disabilitare il conteggio non è più possibile",
+        "es": "doble inhabilitación ya no es posible",
+        "pl": "wyliczenie podwójne nie jest możliwe",
+        "zh-cn": "不可再计算"
+      },
       "0.0.7": {
         "en": "implements ids for Other data states (with folders)\nthe stringlength of the hours will be assigned by itself\nstructuring sourcecode",
         "de": "ids für Andere Datenzustände (mit Ordnern)\ndie stringlänge der stunden wird von selbst zugewiesen\nstrukturierender quellcode",
@@ -74,18 +86,6 @@
         "es": "prueba con la versión 0.0.2",
         "pl": "wypróbuj wersję 0.0.2",
         "zh-cn": "尝试版本 0.0.2"
-      },
-      "0.0.1": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版"
       }
     },
     "title": "Operating-Hours",
