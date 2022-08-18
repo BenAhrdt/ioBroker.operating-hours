@@ -19,6 +19,10 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS** Dependencie changed
+* (BenAhrdt) set dependencies to admin 5.3.8 (to do some test)
+
 ### 0.0.6 (2022-08-17) this is a test 
 * (BenAhrdt) release with plugins
 
