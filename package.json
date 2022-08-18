@@ -1,6 +1,6 @@
 {
   "name": "iobroker.operating-hours",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "counting the operationg hours of own created states",
   "author": {
     "name": "BenAhrdt",

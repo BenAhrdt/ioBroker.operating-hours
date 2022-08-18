@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "news": {
+      "0.0.10": {
+        "en": "deleting a require bugfix",
+        "de": "löschen von bugfix",
+        "ru": "удаление необходимого багфикса",
+        "pt": "exclusão de um bugfix requerer",
+        "nl": "een vereiste afluisterapparatuur",
+        "fr": "supprimer un bugfix",
+        "it": "eliminare un bugfix richiesto",
+        "es": "eliminar un bugfix",
+        "pl": "wyrzucając wymagający bugfix",
+        "zh-cn": "删除要求的软禁"
+      },
       "0.0.9": {
         "en": "bugfix in checking last state",
         "de": "bugfix bei der überprüfung des letzten zustands",
@@ -74,18 +86,6 @@
         "es": "prueba con la versión 0.0.4",
         "pl": "wypróbuj wersję 0.0.4",
         "zh-cn": "尝试版本 0.0.4"
-      },
-      "0.0.3": {
-        "en": "try for version 0.0.3",
-        "de": "versuchen Sie es mit Version 0.0.3",
-        "ru": "попробуй версию 0.0.3",
-        "pt": "tente para a versão 0.0.3",
-        "nl": "probeer voor versie 0.0.3",
-        "fr": "essayez la version 0.0.3",
-        "it": "prova con la versione 0.0.3",
-        "es": "prueba con la versión 0.0.3",
-        "pl": "wypróbuj wersję 0.0.3",
-        "zh-cn": "尝试版本 0.0.3"
       }
     },
     "title": "Operating-Hours",
