@@ -7,6 +7,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
+const { stat } = require("fs");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -329,7 +330,7 @@ class OperatingHours extends utils.Adapter {
 					this.setState(`${channel}.${this.channelFolders.administrative}.${this.administrative.enableCounting.name}`,state.val,true);
 
 					// Abfrage, ob sich der Wert geändert hat (Nur dann, wir etwas unternommen)
-					if(!lastState){
+					if(state.val !== lastState){
 						// Abfrage, ob der neue Wert true ist
 						if(state.val){
 							this.configedChannels[channel].timestamp = state.ts;
