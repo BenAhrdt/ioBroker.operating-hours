@@ -257,8 +257,8 @@ class OperatingHours extends utils.Adapter {
 		const minutes = milliseconds/60000;
 		const hours = milliseconds/3600000;
 		const hourlength = Math.trunc(hours).toString().length;
-		let hourstring = "0";
-		let hourindex = 1;
+		let hourstring = "00";
+		let hourindex = 2;
 		for(hourindex; hourindex < hourlength; hourindex++){
 			hourstring += "0";
 		}
