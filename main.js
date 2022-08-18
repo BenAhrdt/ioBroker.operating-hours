@@ -98,23 +98,38 @@ class OperatingHours extends utils.Adapter {
 		this.counting();
 	}
 
-	counting(){
-		let countingEnabled = false;
-		const timestamp = Date.now();
-		if(this.timeouts.countingTimeout){
-			this.clearTimeout(this.timeouts.countingTimeout);
-			delete this.timeouts.countingTimeout;
-		}
+
+	// deletes not configured states
+	async delNotConfiguredStates()
+	{
+		// Get all objects in the adapter (later)
+		this.AdapterObjectsAtStart = await this.getAdapterObjectsAsync();
+		let activeString = "";
 		for(const channel in this.configedChannels){
-			const channelObj = this.configedChannels[channel];
-			if(channelObj.administrative.enableCounting){
-				// Aktivierung des späteren timeout aufrufes
-				countingEnabled = true;
-				this.setOperatingHours(channel, channelObj.operatingHours.milliseconds + (timestamp - channelObj.timestamp), timestamp);
+			// Operating hours löschen
+			for(const state in this.operatingHours){
+				activeString = `${this.namespace}.${channel}.${this.channelFolders.operatingHours}.${state}`;
+				delete this.AdapterObjectsAtStart[activeString];
 			}
+			activeString = `${this.namespace}.${channel}.${this.channelFolders.operatingHours}`;
+			delete this.AdapterObjectsAtStart[activeString];
+
+			// Administrative löschen
+			for(const state in this.administrative){
+				activeString = `${this.namespace}.${channel}.${this.channelFolders.administrative}.${state}`;
+				delete this.AdapterObjectsAtStart[activeString];
+			}
+			activeString = `${this.namespace}.${channel}.${this.channelFolders.administrative}`;
+			delete this.AdapterObjectsAtStart[activeString];
+
+			// Channel löschen
+			activeString = `${this.namespace}.${channel}`;
+			delete this.AdapterObjectsAtStart[activeString];
 		}
-		if(countingEnabled){
-			this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.timeoutValues.countingTimeout);
+
+		// delete the remaining states
+		for(const state in this.AdapterObjectsAtStart){
+			this.delObjectAsync(state);
 		}
 	}
 
@@ -212,45 +227,33 @@ class OperatingHours extends utils.Adapter {
 		}
 	}
 
+	// Count the operatinghours
+	counting(){
+		let countingEnabled = false;
+		const timestamp = Date.now();
+		if(this.timeouts.countingTimeout){
+			this.clearTimeout(this.timeouts.countingTimeout);
+			delete this.timeouts.countingTimeout;
+		}
+		for(const channel in this.configedChannels){
+			const channelObj = this.configedChannels[channel];
+			if(channelObj.administrative.enableCounting){
+				// Aktivierung des späteren timeout aufrufes
+				countingEnabled = true;
+				this.setOperatingHours(channel, channelObj.operatingHours.milliseconds + (timestamp - channelObj.timestamp), timestamp);
+			}
+		}
+		if(countingEnabled){
+			this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.timeoutValues.countingTimeout);
+		}
+	}
+
+	// Get the channel id in caseof the text implements not allowed characters
 	getChannelId(configedId){
 		return (configedId || "").replace(this.FORBIDDEN_CHARS, "_").replace(/[-\s]/g, "_");
 	}
 
-	// deletes not configured states
-	async delNotConfiguredStates()
-	{
-		// Get all objects in the adapter (later)
-		this.AdapterObjectsAtStart = await this.getAdapterObjectsAsync();
-		let activeString = "";
-		for(const channel in this.configedChannels){
-			// Operating hours löschen
-			for(const state in this.operatingHours){
-				activeString = `${this.namespace}.${channel}.${this.channelFolders.operatingHours}.${state}`;
-				delete this.AdapterObjectsAtStart[activeString];
-			}
-			activeString = `${this.namespace}.${channel}.${this.channelFolders.operatingHours}`;
-			delete this.AdapterObjectsAtStart[activeString];
-
-			// Administrative löschen
-			for(const state in this.administrative){
-				activeString = `${this.namespace}.${channel}.${this.channelFolders.administrative}.${state}`;
-				delete this.AdapterObjectsAtStart[activeString];
-			}
-			activeString = `${this.namespace}.${channel}.${this.channelFolders.administrative}`;
-			delete this.AdapterObjectsAtStart[activeString];
-
-			// Channel löschen
-			activeString = `${this.namespace}.${channel}`;
-			delete this.AdapterObjectsAtStart[activeString];
-		}
-
-		// delete the remaining states
-		for(const state in this.AdapterObjectsAtStart){
-			this.delObjectAsync(state);
-		}
-	}
-
-
+	// Set operatinghours (all formats in case of the milliseconds)
 	setOperatingHours(channel,milliseconds,ts){
 		// Berechenn der Werte
 		const seconds = milliseconds/1000;

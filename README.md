@@ -23,6 +23,7 @@ To reset the counted operating hours just write one numeric state to 0.
 ### **WORK IN PROGRESS** Dependencie changed
 * (BenAhrdt) implements ids for Other data states (with folders)
 * (BenAhrdt) the stringlength of the hours will be assigned by itself
+* (BenAhrdt) structuring sourcecode
 
 ### 0.0.6 (2022-08-17) this is a test 
 * (BenAhrdt) release with plugins
