@@ -78,6 +78,10 @@ class OperatingHours extends utils.Adapter {
 		for(const element of this.config.statesTable){
 			if(!this.configedChannels[this.getChannelId(element[this.internalIds.state])]){
 				this.configedChannels[this.getChannelId(element[this.internalIds.state])] = {};
+				this.configedChannels[this.getChannelId(element[this.internalIds.state])].name = element[this.internalIds.state];
+			}
+			else{
+				this.log.warn(`The id for "${element[this.internalIds.state]}" cound not be created. It is the same as "${this.configedChannels[this.getChannelId(element[this.internalIds.state])].name}".`);
 			}
 		}
 
@@ -121,7 +125,7 @@ class OperatingHours extends utils.Adapter {
 			await this.setObjectNotExistsAsync(`${channel}`,{
 				type:"channel",
 				common:{
-					name: channel
+					name: this.configedChannels[channel].name
 				},
 				native : {},
 			});
