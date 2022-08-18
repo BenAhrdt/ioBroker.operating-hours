@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "news": {
+      "0.0.9": {
+        "en": "bugfix in checking last state",
+        "de": "bugfix bei der überprüfung des letzten zustands",
+        "ru": "bugfix в проверке последнего состояния",
+        "pt": "bugfix na verificação do último estado",
+        "nl": "quality over quantity (qoq) releases vertaling:",
+        "fr": "bugfix dans la vérification de l'état dernier",
+        "it": "bugfix nel controllo dell'ultimo stato",
+        "es": "bugfix en la comprobación del último estado",
+        "pl": "błędy w sprawowaniu końcowego stanu",
+        "zh-cn": "b 检查最后州的奖励"
+      },
       "0.0.8": {
         "en": "double disable counting is not possible anymore",
         "de": "doppeldisable zählen ist nicht mehr möglich",
@@ -74,18 +86,6 @@
         "es": "prueba con la versión 0.0.3",
         "pl": "wypróbuj wersję 0.0.3",
         "zh-cn": "尝试版本 0.0.3"
-      },
-      "0.0.2": {
-        "en": "try for version 0.0.2",
-        "de": "versuchen Sie es mit Version 0.0.2",
-        "ru": "попробуй версию 0.0.2",
-        "pt": "tente para a versão 0.0.2",
-        "nl": "probeer voor versie 0.0.2",
-        "fr": "essayez la version 0.0.2",
-        "it": "prova con la versione 0.0.2",
-        "es": "prueba con la versión 0.0.2",
-        "pl": "wypróbuj wersję 0.0.2",
-        "zh-cn": "尝试版本 0.0.2"
       }
     },
     "title": "Operating-Hours",
