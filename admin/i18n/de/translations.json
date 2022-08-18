@@ -2,5 +2,7 @@
     "operating-hours adapter settings": "Adaptereinstellungen für Betriebsstunden",
     "states": "Zustände",
     "mainSettings": "Haupteinstellungen",
-    "mainInformation": "Geben Sie nachfolgend die gewünschten Namen der states ein, für welche eine Betriebsstundenmessung durchgeführt werden soll"
+    "mainInformation1": "Zur Messung der Betriebsstunden sind keine externen Zustände erforderlich.",
+    "mainInformation2": "Die unten eingetragenen Namen werden als Zustände in den Objekten des Adapters generiert und dienen zum Aktivieren und Zurücksetzen des Betriebsstundenzählers.",
+    "mainInformation3": "(RESET => einfach einen Wert (z.B. den Wert Stunde) auf 0 setzen) Anhand der generierten Zustände können Sie die Aktivierung mit komplexen Bedingungen einfach in einem Skript umsetzen."
 }

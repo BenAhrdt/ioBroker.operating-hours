@@ -2,5 +2,7 @@
     "operating-hours adapter settings": "Adapterinstellingen voor bedrijfsuren",
     "states": "staten",
     "mainSettings": "belangrijkste instellingen",
-    "mainInformation": "Vul hieronder de gewenste namen in van de toestanden waarvoor een bedrijfsurenmeting moet worden uitgevoerd."
+    "mainInformation1": "Er zijn geen externe toestanden vereist om de bedrijfsuren te meten.",
+    "mainInformation2": "De hieronder ingevoerde namen worden als toestanden in de objecten van de adapter gegenereerd en worden gebruikt om de bedrijfsurenteller te activeren en te resetten.",
+    "mainInformation3": "(RESET => stel eenvoudig een waarde (bijv. de waarde uur) in op 0) Met behulp van de gegenereerde statussen kunt u activering met complexe voorwaarden eenvoudig in een script implementeren."
 }

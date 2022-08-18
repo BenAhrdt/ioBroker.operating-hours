@@ -43,8 +43,8 @@ class OperatingHours extends utils.Adapter {
 			seconds : {name:"seconds",type:"number",write:true,unit:"s",def:0},
 			minutes : {name:"minutes",type:"number",write:true,unit:"min",def:0},
 			hours : {name:"hours",type:"number",write:true,unit:"h",def:0},
-			timestring_h_m :{name:"timestring_h_m",type:"string",write:false,unit:"hh:mm",def:""},
-			timestring_h_m_s :{name:"timestring_h_m_s",type:"string",write:false,unit:"hh:mm:ss",def:""}
+			timestring_h_m :{name:"timestring_h_m",type:"string",write:false,unit:"h:m",def:""},
+			timestring_h_m_s :{name:"timestring_h_m_s",type:"string",write:false,unit:"h:m:s",def:""}
 		};
 		this.administrative = {
 			enableCounting : {name:"enableCounting", write:true}
@@ -256,8 +256,14 @@ class OperatingHours extends utils.Adapter {
 		const seconds = milliseconds/1000;
 		const minutes = milliseconds/60000;
 		const hours = milliseconds/3600000;
-		const h_m = ("00" + Math.trunc(hours).toString()).slice(-2) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2);
-		const h_m_s = ("00" + Math.trunc(hours).toString()).slice(-2) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2) + ":" + ("00" + Math.trunc((seconds%60)).toString()).slice(-2);
+		const hourlength = Math.trunc(hours).toString().length;
+		let hourstring = "0";
+		let hourindex = 1;
+		for(hourindex; hourindex < hourlength; hourindex++){
+			hourstring += "0";
+		}
+		const h_m = (hourstring + Math.trunc(hours).toString()).slice(-hourindex) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2);
+		const h_m_s = (hourstring + Math.trunc(hours).toString()).slice(-hourindex) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2) + ":" + ("00" + Math.trunc((seconds%60)).toString()).slice(-2);
 
 		// Schreiben der states
 		this.configedChannels[channel].timestamp = ts;
@@ -302,11 +308,19 @@ class OperatingHours extends utils.Adapter {
 		if (state) {
 			// Es werden nur Werte beachtet, welche mit ack = false geschrieben wurden.
 			if(!state.ack){
-
-				const newId = id.substring(this.namespace.length + 1,id.length);
-				const channel = newId.substring(0,newId.indexOf("."));
+				let newId = id.substring(this.namespace.length,id.length);
+				// Vorletzten punkt heraus finden
+				let beforeLastIndex = this.namespace.length;
+				while(newId.indexOf(".") !== newId.lastIndexOf(".")){
+					beforeLastIndex += newId.indexOf(".") + 1;
+					newId = id.substring(beforeLastIndex,id.length);
+				}
+				// Endung der id und den channel herausfiltern
+				const idExtention = id.substring(beforeLastIndex,id.length);
+				const channel = id.substring(this.namespace.length + 1,beforeLastIndex - 1); // -1, wegen dem letzten Punkt für die foldertrennung
+				this.log.info(channel);
 				// Prüfen, ob das enableCounting geändert wurde
-				if(newId.indexOf(this.administrative.enableCounting.name) !== -1){
+				if(idExtention.indexOf(this.administrative.enableCounting.name) !== -1){
 					// Zuweisen des neuen States
 					const lastState = this.configedChannels[channel][this.channelFolders.administrative].enableCounting;
 					this.configedChannels[channel][this.channelFolders.administrative].enableCounting = state.val;
@@ -333,7 +347,7 @@ class OperatingHours extends utils.Adapter {
 				}
 
 				// Prüfen, ob sich ein Betriebsstundenzähler geändert hat
-				else if(newId.indexOf(this.channelFolders.operatingHours) !== -1){
+				else if(idExtention.indexOf(this.channelFolders.operatingHours) !== -1){
 					// Nun wird noch geprüft,welcher Betriebsstundenwert geändert wurde => Somitkann dieser in ms umgerechnet werden.
 					let milliseconds = 0;
 					if(typeof(state.val) === "number"){ // auf den Type number prüfen

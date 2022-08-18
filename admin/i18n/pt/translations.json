@@ -2,5 +2,7 @@
     "operating-hours adapter settings": "Configurações do adaptador para horas de operação",
     "states": "estados",
     "mainSettings": "configurações principais",
-    "mainInformation": "Insira os nomes desejados dos estados abaixo para os quais uma medição de horas de operação deve ser realizada."
+    "mainInformation1": "Nenhum estado externo é necessário para medir as horas de operação.",
+    "mainInformation2": "Os nomes inseridos abaixo são gerados como estados nos objetos do adaptador e são usados ​​para ativar e zerar o contador de horas de operação.",
+    "mainInformation3": "(RESET => basta definir um valor (por exemplo, o valor hora) para 0) Usando os estados gerados, você pode implementar facilmente a ativação com condições complexas em um script."
 }

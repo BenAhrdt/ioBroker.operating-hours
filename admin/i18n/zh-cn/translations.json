@@ -2,5 +2,7 @@
     "operating-hours adapter settings": "工作时间的适配器设置",
     "states": "状态",
     "mainSettings": "主要设置",
-    "mainInformation": "在下面输入要执行运行时间测量的状态的所需名称。"
+    "mainInformation1": "测量运行时间不需要外部状态。",
+    "mainInformation2": "下面输入的名称作为适配器对象中的状态生成，用于激活和重置运行时间计数器。",
+    "mainInformation3": "（RESET => 只需将一个值（例如值小时）设置为 0）使用生成的状态，您可以轻松地在脚本中实现具有复杂条件的激活。"
 }

@@ -8,14 +8,24 @@
             "sm": 12,
             "size": 2
         },
-        "Information":{
+        "Information1":{
             "newLine":true,
             "type": "staticText",
-            "label": "mainInformation"
+            "label": "mainInformation1"
+        },
+        "Information2":{
+            "newLine":true,
+            "type": "staticText",
+            "label": "mainInformation2"
+        },
+        "Information3":{
+            "type": "staticText",
+            "label": "mainInformation3"
         },
         "statesTable":{
             "type":"table",
             "sm":12,
+            "allowAddByFilter": true,
             "items":[
                 {
                     "type": "text",
