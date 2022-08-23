@@ -19,6 +19,9 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS** bugfix in id creation
+* (BenAhrdt) bugfix: id can not end with "." anymore
+
 ### 0.0.10 (2022-08-18) bugfix require
 * (BenAhrdt) deleting a require bugfix
 

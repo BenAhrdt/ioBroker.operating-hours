@@ -250,6 +250,9 @@ class OperatingHours extends utils.Adapter {
 
 	// Get the channel id in caseof the text implements not allowed characters
 	getChannelId(configedId){
+		if(configedId.substring(configedId.length - 1,configedId.length) === "."){
+			configedId = configedId.substring(0,configedId.length - 1) + "_";
+		}
 		return (configedId || "").replace(this.FORBIDDEN_CHARS, "_").replace(/[-\s]/g, "_");
 	}
 
