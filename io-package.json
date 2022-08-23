@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "news": {
+      "0.0.11": {
+        "en": "bugfix: id can not end with \".\" anymore",
+        "de": "bugfix: id kann nicht mehr mit \" enden",
+        "ru": "bugfix: id не может заканчиваться \".\" больше",
+        "pt": "bugfix: id não pode terminar com \"",
+        "nl": "id kan niet meer eindigen met \"",
+        "fr": "bugfix: id ne peut plus se terminer avec \".\"",
+        "it": "bugfix: id non può finire con \"",
+        "es": "id no puede terminar con \"",
+        "pl": "atak: id nie może zakończyć się „”",
+        "zh-cn": "b ugfix:不用“......”二字。"
+      },
       "0.0.10": {
         "en": "deleting a require bugfix",
         "de": "löschen von bugfix",
@@ -74,18 +86,6 @@
         "es": "prueba con la versión 0.0.5",
         "pl": "wypróbuj wersję 0.0.5",
         "zh-cn": "尝试版本 0.0.5"
-      },
-      "0.0.4": {
-        "en": "try for version 0.0.4",
-        "de": "versuchen Sie es mit Version 0.0.4",
-        "ru": "попробуй версию 0.0.4",
-        "pt": "tente para a versão 0.0.4",
-        "nl": "probeer voor versie 0.0.4",
-        "fr": "essayez la version 0.0.4",
-        "it": "prova con la versione 0.0.4",
-        "es": "prueba con la versión 0.0.4",
-        "pl": "wypróbuj wersję 0.0.4",
-        "zh-cn": "尝试版本 0.0.4"
       }
     },
     "title": "Operating-Hours",
