@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "news": {
+      "0.0.12": {
+        "en": "regex for \".\" on last character implemented",
+        "de": "regex für \"",
+        "ru": "regex for \".\" на последнем персонаже реализовано",
+        "pt": "regex para \".\" no último personagem implementado",
+        "nl": "regex voor \"",
+        "fr": "regex for \".\" on last character implemented",
+        "it": "regex per \". su ultimo personaggio implementato",
+        "es": "regex for \".\" on last character implemented",
+        "pl": "\"w ostatniej postaci zrealizowano\"",
+        "zh-cn": "实施最后性质中的“......”的登记"
+      },
       "0.0.11": {
         "en": "bugfix: id can not end with \".\" anymore",
         "de": "bugfix: id kann nicht mehr mit \" enden",
@@ -74,18 +86,6 @@
         "es": "liberación con plugins",
         "pl": "uwalnianie z wtyczki",
         "zh-cn": "皮卢金的释放"
-      },
-      "0.0.5": {
-        "en": "try for version 0.0.5",
-        "de": "versuchen Sie es mit Version 0.0.5",
-        "ru": "попробуй версию 0.0.5",
-        "pt": "tente para a versão 0.0.5",
-        "nl": "probeer voor versie 0.0.5",
-        "fr": "essayez la version 0.0.5",
-        "it": "prova con la versione 0.0.5",
-        "es": "prueba con la versión 0.0.5",
-        "pl": "wypróbuj wersję 0.0.5",
-        "zh-cn": "尝试版本 0.0.5"
       }
     },
     "title": "Operating-Hours",
