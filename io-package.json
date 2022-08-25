@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "news": {
+      "0.0.13": {
+        "en": "set admin dependencies to >= 6.2.17",
+        "de": "adminabhängigkeiten auf >= 6.2.17 einstellen",
+        "ru": "установить админ зависимости от >= 6.2.17",
+        "pt": "definir dependências de administrador para >= 6.2.17",
+        "nl": "zet administratie afhankelijk van 6.2.17",
+        "fr": "définir les dépendances d'administration à phy= 6.2.17",
+        "it": ">= 6.2.17",
+        "es": "establecer las dependencias de administración para",
+        "pl": "zawartość admini zależy od >= 6.2.17",
+        "zh-cn": "确定危急情况"
+      },
       "0.0.12": {
         "en": "regex for \".\" on last character implemented",
         "de": "regex für \"",
@@ -74,18 +86,6 @@
         "es": "implements ids for Otros estados de datos (con carpetas)\nla fuerza de las horas será asignada por sí misma\nstructuring sourcecode",
         "pl": "wdrażanie elementów dla Inne stany danych (z folderami)\ndługość sznurowych godzin zostaje przypisana przez siebie samego\nstructuring source code",
         "zh-cn": "执行禁忌 其他数据说明(手机)\n定时数将按本身分配。\nb. 结构渊源"
-      },
-      "0.0.6": {
-        "en": "release with plugins",
-        "de": "veröffentlichung mit plugins",
-        "ru": "релиз с плагинами",
-        "pt": "lançamento com plugins",
-        "nl": "verlaat",
-        "fr": "libération avec des plugins",
-        "it": "rilascio con plugin",
-        "es": "liberación con plugins",
-        "pl": "uwalnianie z wtyczki",
-        "zh-cn": "皮卢金的释放"
       }
     },
     "title": "Operating-Hours",
