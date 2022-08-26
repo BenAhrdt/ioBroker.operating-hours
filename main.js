@@ -54,9 +54,6 @@ class OperatingHours extends utils.Adapter {
 		this.timeoutIds = {
 			countingTimeout : "countingTimeout"
 		};
-		this.timeoutValues = {
-			countingTimeout : 6000
-		};
 	}
 
 	// Clear all Timeouts, if there are some
@@ -244,7 +241,7 @@ class OperatingHours extends utils.Adapter {
 			}
 		}
 		if(countingEnabled){
-			this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.timeoutValues.countingTimeout);
+			this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.config.refreshRate);
 		}
 	}
 
@@ -334,7 +331,7 @@ class OperatingHours extends utils.Adapter {
 						if(state.val){
 							this.configedChannels[channel].timestamp = state.ts;
 							if(!this.timeouts.countingTimeout){
-								this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.timeoutValues.countingTimeout);
+								this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.config.refreshRate);
 							}
 						}
 						else{

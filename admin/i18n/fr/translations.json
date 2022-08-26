@@ -1,8 +1,9 @@
 {
     "operating-hours adapter settings": "Paramètres de l'adaptateur pour les heures de fonctionnement",
     "states": "États",
-    "mainSettings": "Réglages principaux",
-    "mainInformation1": "Aucun état externe n'est requis pour mesurer les heures de fonctionnement.",
-    "mainInformation2": "Les noms saisis ci-dessous sont générés en tant qu'états dans les objets de l'adaptateur et sont utilisés pour activer et réinitialiser le compteur d'heures de fonctionnement.",
-    "mainInformation3": "(RESET => définissez simplement une valeur (par exemple la valeur heure) sur 0) En utilisant les états générés, vous pouvez facilement implémenter l'activation avec des conditions complexes dans un script."
+    "mainInformations": "informations principales",
+    "mainInformationText": "Aucun état externe n'est requis pour mesurer les heures de fonctionnement. ",
+    "configuration": "configuration",
+    "refreshRate": "fréquence de rafraîchissement",
+    "refreshRateTooltip": "ici, vous pouvez définir le taux de rafraîchissement, avec lequel les heures de fonctionnement doivent être mises à jour"
 }

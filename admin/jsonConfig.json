@@ -1,26 +1,49 @@
 {
     "i18n": true,
     "items":{
-        "Header": {
+        "informationHeader": {
             "newLine": true,
             "type": "header",
-            "text": "mainSettings",
+            "text": "mainInformations",
             "sm": 12,
-            "size": 2
+            "size": 3
         },
         "Information1":{
             "newLine":true,
             "type": "staticText",
-            "label": "mainInformation1"
+            "label": "mainInformationText",
+            "sm": 6
         },
-        "Information2":{
-            "newLine":true,
-            "type": "staticText",
-            "label": "mainInformation2"
+        "configurationHeader": {
+            "newLine": true,
+            "type": "header",
+            "text": "configuration",
+            "sm": 12,
+            "size": 3
         },
-        "Information3":{
-            "type": "staticText",
-            "label": "mainInformation3"
+        "refreshRate": {
+            "newLine": true,
+            "type": "select",
+            "options": [
+              {"label":"1 s","value":1000},
+              {"label":"2 s","value":2000},
+              {"label":"3 s","value":3000},
+              {"label":"4 s","value":4000},
+              {"label":"5 s","value":5000},
+              {"label":"6 s","value":6000},
+              {"label":"7 s","value":7000},
+              {"label":"8 s","value":8000},
+              {"label":"9 s","value":9000},
+              {"label":"10 s","value":10000},
+              {"label":"20 s","value":20000},
+              {"label":"30 s","value":30000},
+              {"label":"40 s","value":40000},
+              {"label":"50 s","value":50000},
+              {"label":"60 s","value":60000}],
+              "default": 6000,
+            "label": "refreshRate",
+            "tooltip": "refreshRateTooltip",
+            "sm": 1
         },
         "statesTable":{
             "type":"table",

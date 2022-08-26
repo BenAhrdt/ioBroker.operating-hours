@@ -1,8 +1,9 @@
 {
     "operating-hours adapter settings": "Impostazioni dell'adattatore per le ore di funzionamento",
     "states": "stati",
-    "mainSettings": "impostazioni principali",
-    "mainInformation1": "Non sono richiesti stati esterni per misurare le ore di funzionamento.",
-    "mainInformation2": "I nomi immessi di seguito vengono generati come stati negli oggetti dell'adattatore e vengono utilizzati per attivare e ripristinare il contatore delle ore di esercizio.",
-    "mainInformation3": "(RESET => imposta semplicemente un valore (es. il valore ora) a 0) Usando gli stati generati, puoi facilmente implementare l'attivazione con condizioni complesse in uno script."
+    "mainInformations": "informazioni principali",
+    "mainInformationText": "Non sono richiesti stati esterni per misurare le ore di funzionamento. ",
+    "configuration": "configurazione",
+    "refreshRate": "frequenza di aggiornamento",
+    "refreshRateTooltip": "qui è possibile impostare la frequenza di aggiornamento, con la quale devono essere aggiornati gli orari di funzionamento"
 }

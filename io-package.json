@@ -1,158 +1,159 @@
 {
-  "common": {
-    "name": "operating-hours",
-    "version": "0.0.13",
-    "news": {
-      "0.0.13": {
-        "en": "set admin dependencies to >= 6.2.17",
-        "de": "adminabhängigkeiten auf >= 6.2.17 einstellen",
-        "ru": "установить админ зависимости от >= 6.2.17",
-        "pt": "definir dependências de administrador para >= 6.2.17",
-        "nl": "zet administratie afhankelijk van 6.2.17",
-        "fr": "définir les dépendances d'administration à phy= 6.2.17",
-        "it": ">= 6.2.17",
-        "es": "establecer las dependencias de administración para",
-        "pl": "zawartość admini zależy od >= 6.2.17",
-        "zh-cn": "确定危急情况"
-      },
-      "0.0.12": {
-        "en": "regex for \".\" on last character implemented",
-        "de": "regex für \"",
-        "ru": "regex for \".\" на последнем персонаже реализовано",
-        "pt": "regex para \".\" no último personagem implementado",
-        "nl": "regex voor \"",
-        "fr": "regex for \".\" on last character implemented",
-        "it": "regex per \". su ultimo personaggio implementato",
-        "es": "regex for \".\" on last character implemented",
-        "pl": "\"w ostatniej postaci zrealizowano\"",
-        "zh-cn": "实施最后性质中的“......”的登记"
-      },
-      "0.0.11": {
-        "en": "bugfix: id can not end with \".\" anymore",
-        "de": "bugfix: id kann nicht mehr mit \" enden",
-        "ru": "bugfix: id не может заканчиваться \".\" больше",
-        "pt": "bugfix: id não pode terminar com \"",
-        "nl": "id kan niet meer eindigen met \"",
-        "fr": "bugfix: id ne peut plus se terminer avec \".\"",
-        "it": "bugfix: id non può finire con \"",
-        "es": "id no puede terminar con \"",
-        "pl": "atak: id nie może zakończyć się „”",
-        "zh-cn": "b ugfix:不用“......”二字。"
-      },
-      "0.0.10": {
-        "en": "deleting a require bugfix",
-        "de": "löschen von bugfix",
-        "ru": "удаление необходимого багфикса",
-        "pt": "exclusão de um bugfix requerer",
-        "nl": "een vereiste afluisterapparatuur",
-        "fr": "supprimer un bugfix",
-        "it": "eliminare un bugfix richiesto",
-        "es": "eliminar un bugfix",
-        "pl": "wyrzucając wymagający bugfix",
-        "zh-cn": "删除要求的软禁"
-      },
-      "0.0.9": {
-        "en": "bugfix in checking last state",
-        "de": "bugfix bei der überprüfung des letzten zustands",
-        "ru": "bugfix в проверке последнего состояния",
-        "pt": "bugfix na verificação do último estado",
-        "nl": "quality over quantity (qoq) releases vertaling:",
-        "fr": "bugfix dans la vérification de l'état dernier",
-        "it": "bugfix nel controllo dell'ultimo stato",
-        "es": "bugfix en la comprobación del último estado",
-        "pl": "błędy w sprawowaniu końcowego stanu",
-        "zh-cn": "b 检查最后州的奖励"
-      },
-      "0.0.8": {
-        "en": "double disable counting is not possible anymore",
-        "de": "doppeldisable zählen ist nicht mehr möglich",
-        "ru": "двойное отключение уже не возможно",
-        "pt": "contagem de desabilitação dupla não é mais possível",
-        "nl": "dubbele disable counting is niet meer mogelijk",
-        "fr": "le comptage double désactive n'est plus possible",
-        "it": "doppio disabilitare il conteggio non è più possibile",
-        "es": "doble inhabilitación ya no es posible",
-        "pl": "wyliczenie podwójne nie jest możliwe",
-        "zh-cn": "不可再计算"
-      },
-      "0.0.7": {
-        "en": "implements ids for Other data states (with folders)\nthe stringlength of the hours will be assigned by itself\nstructuring sourcecode",
-        "de": "ids für Andere Datenzustände (mit Ordnern)\ndie stringlänge der stunden wird von selbst zugewiesen\nstrukturierender quellcode",
-        "ru": "реализует идентификаторы для Другие состояния данных (с папками)\nдлина часов будет назначена собой\nструктурирование исходного кода",
-        "pt": "implementos para Outros estados de dados (com pastas)\no comprimento de cadeia das horas será atribuído por si mesmo\ncódigo fonte de estruturação",
-        "nl": "_ Andere data staat (met folders)\nde stringlengte van de uren zal worden toegewezen door zichzelf\nvernietigende broncode",
-        "fr": "implémente les ids pour Autres états de données (avec dossiers)\nla longueur de chaîne des heures sera attribuée par elle-même\nstructuration du code source",
-        "it": "strumenti per Altri stati di dati (con cartelle)\nla lunghezza d'archi delle ore sarà assegnata da sola\nstrutturazione del codice sorgente",
-        "es": "implements ids for Otros estados de datos (con carpetas)\nla fuerza de las horas será asignada por sí misma\nstructuring sourcecode",
-        "pl": "wdrażanie elementów dla Inne stany danych (z folderami)\ndługość sznurowych godzin zostaje przypisana przez siebie samego\nstructuring source code",
-        "zh-cn": "执行禁忌 其他数据说明(手机)\n定时数将按本身分配。\nb. 结构渊源"
-      }
+    "common": {
+        "name": "operating-hours",
+        "version": "0.0.13",
+        "news": {
+            "0.0.13": {
+                "en": "set admin dependencies to >= 6.2.17",
+                "de": "adminabhängigkeiten auf >= 6.2.17 einstellen",
+                "ru": "установить админ зависимости от >= 6.2.17",
+                "pt": "definir dependências de administrador para >= 6.2.17",
+                "nl": "zet administratie afhankelijk van 6.2.17",
+                "fr": "définir les dépendances d'administration à phy= 6.2.17",
+                "it": ">= 6.2.17",
+                "es": "establecer las dependencias de administración para",
+                "pl": "zawartość admini zależy od >= 6.2.17",
+                "zh-cn": "确定危急情况"
+            },
+            "0.0.12": {
+                "en": "regex for \".\" on last character implemented",
+                "de": "regex für \"",
+                "ru": "regex for \".\" на последнем персонаже реализовано",
+                "pt": "regex para \".\" no último personagem implementado",
+                "nl": "regex voor \"",
+                "fr": "regex for \".\" on last character implemented",
+                "it": "regex per \". su ultimo personaggio implementato",
+                "es": "regex for \".\" on last character implemented",
+                "pl": "\"w ostatniej postaci zrealizowano\"",
+                "zh-cn": "实施最后性质中的“......”的登记"
+            },
+            "0.0.11": {
+                "en": "bugfix: id can not end with \".\" anymore",
+                "de": "bugfix: id kann nicht mehr mit \" enden",
+                "ru": "bugfix: id не может заканчиваться \".\" больше",
+                "pt": "bugfix: id não pode terminar com \"",
+                "nl": "id kan niet meer eindigen met \"",
+                "fr": "bugfix: id ne peut plus se terminer avec \".\"",
+                "it": "bugfix: id non può finire con \"",
+                "es": "id no puede terminar con \"",
+                "pl": "atak: id nie może zakończyć się „”",
+                "zh-cn": "b ugfix:不用“......”二字。"
+            },
+            "0.0.10": {
+                "en": "deleting a require bugfix",
+                "de": "löschen von bugfix",
+                "ru": "удаление необходимого багфикса",
+                "pt": "exclusão de um bugfix requerer",
+                "nl": "een vereiste afluisterapparatuur",
+                "fr": "supprimer un bugfix",
+                "it": "eliminare un bugfix richiesto",
+                "es": "eliminar un bugfix",
+                "pl": "wyrzucając wymagający bugfix",
+                "zh-cn": "删除要求的软禁"
+            },
+            "0.0.9": {
+                "en": "bugfix in checking last state",
+                "de": "bugfix bei der überprüfung des letzten zustands",
+                "ru": "bugfix в проверке последнего состояния",
+                "pt": "bugfix na verificação do último estado",
+                "nl": "quality over quantity (qoq) releases vertaling:",
+                "fr": "bugfix dans la vérification de l'état dernier",
+                "it": "bugfix nel controllo dell'ultimo stato",
+                "es": "bugfix en la comprobación del último estado",
+                "pl": "błędy w sprawowaniu końcowego stanu",
+                "zh-cn": "b 检查最后州的奖励"
+            },
+            "0.0.8": {
+                "en": "double disable counting is not possible anymore",
+                "de": "doppeldisable zählen ist nicht mehr möglich",
+                "ru": "двойное отключение уже не возможно",
+                "pt": "contagem de desabilitação dupla não é mais possível",
+                "nl": "dubbele disable counting is niet meer mogelijk",
+                "fr": "le comptage double désactive n'est plus possible",
+                "it": "doppio disabilitare il conteggio non è più possibile",
+                "es": "doble inhabilitación ya no es posible",
+                "pl": "wyliczenie podwójne nie jest możliwe",
+                "zh-cn": "不可再计算"
+            },
+            "0.0.7": {
+                "en": "implements ids for Other data states (with folders)\nthe stringlength of the hours will be assigned by itself\nstructuring sourcecode",
+                "de": "ids für Andere Datenzustände (mit Ordnern)\ndie stringlänge der stunden wird von selbst zugewiesen\nstrukturierender quellcode",
+                "ru": "реализует идентификаторы для Другие состояния данных (с папками)\nдлина часов будет назначена собой\nструктурирование исходного кода",
+                "pt": "implementos para Outros estados de dados (com pastas)\no comprimento de cadeia das horas será atribuído por si mesmo\ncódigo fonte de estruturação",
+                "nl": "_ Andere data staat (met folders)\nde stringlengte van de uren zal worden toegewezen door zichzelf\nvernietigende broncode",
+                "fr": "implémente les ids pour Autres états de données (avec dossiers)\nla longueur de chaîne des heures sera attribuée par elle-même\nstructuration du code source",
+                "it": "strumenti per Altri stati di dati (con cartelle)\nla lunghezza d'archi delle ore sarà assegnata da sola\nstrutturazione del codice sorgente",
+                "es": "implements ids for Otros estados de datos (con carpetas)\nla fuerza de las horas será asignada por sí misma\nstructuring sourcecode",
+                "pl": "wdrażanie elementów dla Inne stany danych (z folderami)\ndługość sznurowych godzin zostaje przypisana przez siebie samego\nstructuring source code",
+                "zh-cn": "执行禁忌 其他数据说明(手机)\n定时数将按本身分配。\nb. 结构渊源"
+            }
+        },
+        "title": "Operating-Hours",
+        "titleLang": {
+            "en": "Operating-Hours",
+            "de": "Betriebsstunden",
+            "ru": "Часы работы",
+            "pt": "Horas de funcionamento",
+            "nl": "Werk uren",
+            "fr": "Heures d'ouverture",
+            "it": "Ore di servizio",
+            "es": "Horas de funcionamiento",
+            "pl": "Godziny pracy",
+            "zh-cn": "营业时间"
+        },
+        "desc": {
+            "en": "counting the operationg hours of own created states",
+            "de": "Zählen der Betriebsstunden von selbst erstellten Zuständen",
+            "ru": "подсчет часов работы собственных созданных состояний",
+            "pt": "contando as horas de operação dos próprios estados criados",
+            "nl": "het tellen van de bedrijfsuren van eigen aangemaakte toestanden",
+            "fr": "compter les heures de fonctionnement des propres états créés",
+            "it": "contando le ore di funzionamento dei propri stati creati",
+            "es": "contando las horas de funcionamiento de los propios estados creados",
+            "pl": "zliczanie godzin pracy własnych utworzonych państw",
+            "zh-cn": "计算自己创建的状态的运行时间"
+        },
+        "authors": [
+            "BenAhrdt <bsahrdt@gmail.com>"
+        ],
+        "keywords": [
+            "operating",
+            "hours",
+            "Betriebsstunden",
+            "Zähler",
+            "counter"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "operating-hours.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.operating-hours/main/admin/operating-hours.png",
+        "readme": "https://github.com/BenAhrdt/ioBroker.operating-hours/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "metering",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "adminUI": {
+            "config": "json"
+        },
+        "globalDependencies": [
+            {
+                "admin": ">=6.2.17"
+            }
+        ],
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
     },
-    "title": "Operating-Hours",
-    "titleLang": {
-      "en": "Operating-Hours",
-      "de": "Betriebsstunden",
-      "ru": "Часы работы",
-      "pt": "Horas de funcionamento",
-      "nl": "Werk uren",
-      "fr": "Heures d'ouverture",
-      "it": "Ore di servizio",
-      "es": "Horas de funcionamiento",
-      "pl": "Godziny pracy",
-      "zh-cn": "营业时间"
+    "native": {
+        "refreshRate": 6000,
+        "statesTable": []
     },
-    "desc": {
-      "en": "counting the operationg hours of own created states",
-      "de": "Zählen der Betriebsstunden von selbst erstellten Zuständen",
-      "ru": "подсчет часов работы собственных созданных состояний",
-      "pt": "contando as horas de operação dos próprios estados criados",
-      "nl": "het tellen van de bedrijfsuren van eigen aangemaakte toestanden",
-      "fr": "compter les heures de fonctionnement des propres états créés",
-      "it": "contando le ore di funzionamento dei propri stati creati",
-      "es": "contando las horas de funcionamiento de los propios estados creados",
-      "pl": "zliczanie godzin pracy własnych utworzonych państw",
-      "zh-cn": "计算自己创建的状态的运行时间"
-    },
-    "authors": [
-      "BenAhrdt <bsahrdt@gmail.com>"
-    ],
-    "keywords": [
-      "operating",
-      "hours",
-      "Betriebsstunden",
-      "Zähler",
-      "counter"
-    ],
-    "license": "MIT",
-    "platform": "Javascript/Node.js",
-    "main": "main.js",
-    "icon": "operating-hours.png",
-    "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.operating-hours/main/admin/operating-hours.png",
-    "readme": "https://github.com/BenAhrdt/ioBroker.operating-hours/blob/main/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "metering",
-    "compact": true,
-    "connectionType": "local",
-    "dataSource": "push",
-    "adminUI": {
-      "config": "json"
-    },
-    "globalDependencies": [
-      {
-        "admin": ">=6.2.17"
-      }
-    ],
-    "dependencies": [
-      {
-        "js-controller": ">=2.0.0"
-      }
-    ]
-  },
-  "native": {
-    "statesTable": []
-  },
-  "objects": [],
-  "instanceObjects": []
+    "objects": [],
+    "instanceObjects": []
 }

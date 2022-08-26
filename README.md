@@ -19,6 +19,9 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS** refreshrate implemented
+* (BenAhrdt) add refreshrate into config
+
 ### 0.0.13 (2022-08-25) admin dependencies improoved
 * (BenAhrdt) set admin dependencies to >= 6.2.17
 

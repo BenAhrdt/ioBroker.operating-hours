@@ -1,8 +1,9 @@
 {
     "operating-hours adapter settings": "Ustawienia adaptera dla godzin pracy",
     "states": "stany",
-    "mainSettings": "Ustawienia główne",
-    "mainInformation1": "Do pomiaru godzin pracy nie są wymagane żadne stany zewnętrzne.",
-    "mainInformation2": "Wpisane poniżej nazwy są generowane jako stany w obiektach adaptera i służą do aktywacji i resetowania licznika godzin pracy.",
-    "mainInformation3": "(RESET => po prostu ustaw wartość (np. wartość godziny) na 0) Wykorzystując wygenerowane stany możesz łatwo zaimplementować aktywację ze złożonymi warunkami w skrypcie."
+    "mainInformations": "główne informacje",
+    "mainInformationText": "Do pomiaru godzin pracy nie są wymagane żadne stany zewnętrzne. ",
+    "configuration": "konfiguracja",
+    "refreshRate": "częstotliwość odświeżania",
+    "refreshRateTooltip": "tutaj możesz ustawić częstotliwość odświeżania, z jaką powinny być aktualizowane godziny pracy"
 }
