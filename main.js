@@ -309,9 +309,9 @@ class OperatingHours extends utils.Adapter {
 	}
 
 	resetWithCronJob(cronJob){
+		const timestamp = Date.now();
 		for(const ele in this.cronJobs[cronJob]){
 			if(ele != this.jobId){
-				const timestamp = Date.now();
 				this.setOperatingHours(ele,  0, timestamp);
 			}
 		}
