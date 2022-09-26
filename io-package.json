@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "news": {
+      "0.0.16": {
+        "en": "all states with the same resetCronjob became the same timestamp",
+        "de": "alle Staaten mit dem gleichen resetCronjob wurde der gleiche zeitstempel",
+        "ru": "все государства с тем же resetCronjob стали тем же временным примером",
+        "pt": "todos os estados com o mesmo resetCronjob tornou-se o mesmo timestamp",
+        "nl": "alle staten met dezelfde resetCronjob werden dezelfde tijdtamp",
+        "fr": "tous les états avec la même réinitialisationCronjob est devenu le même timetamp",
+        "it": "tutti gli stati con lo stesso resetCronjob è diventato lo stesso timestamp",
+        "es": "todos los estados con el mismo resetCronjob se convirtió en el mismo timetamp",
+        "pl": "wszystkie stany o tej samej resetCronjob stały się tym samym numerem czasu",
+        "zh-cn": "拥有同一重新组合的所有国家也成为同样时间的amp。"
+      },
       "0.0.15": {
         "en": "add config to declare automatic reset for every state",
         "de": "config hinzufügen, um den automatischen reset für jeden staat zu erklären",
@@ -74,18 +86,6 @@
         "es": "eliminar un bugfix",
         "pl": "wyrzucając wymagający bugfix",
         "zh-cn": "删除要求的软禁"
-      },
-      "0.0.9": {
-        "en": "bugfix in checking last state",
-        "de": "bugfix bei der überprüfung des letzten zustands",
-        "ru": "bugfix в проверке последнего состояния",
-        "pt": "bugfix na verificação do último estado",
-        "nl": "quality over quantity (qoq) releases vertaling:",
-        "fr": "bugfix dans la vérification de l'état dernier",
-        "it": "bugfix nel controllo dell'ultimo stato",
-        "es": "bugfix en la comprobación del último estado",
-        "pl": "błędy w sprawowaniu końcowego stanu",
-        "zh-cn": "b 检查最后州的奖励"
       }
     },
     "title": "Operating-Hours",
