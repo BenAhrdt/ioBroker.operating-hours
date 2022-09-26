@@ -5,5 +5,7 @@
     "mainInformationText": "Er zijn geen externe toestanden vereist om de bedrijfsuren te meten. ",
     "configuration": "configuratie",
     "refreshRate": "vernieuwingsfrequentie",
-    "refreshRateTooltip": "hier kunt u de verversingssnelheid instellen waarmee de bedrijfsuren moeten worden bijgewerkt"
+    "refreshRateTooltip": "hier kunt u de verversingssnelheid instellen waarmee de bedrijfsuren moeten worden bijgewerkt",
+    "automaticReset": "automatische reset",
+    "automaticResetTooltip": "plaats de gewenste cronJob, die automatisch de bedrijfsuren reset."
 }

@@ -5,5 +5,7 @@
     "mainInformationText": "测量运行时间不需要外部状态。",
     "configuration": "配置",
     "refreshRate": "刷新率",
-    "refreshRateTooltip": "您可以在此处设置刷新率，使用该刷新率更新工作时间"
+    "refreshRateTooltip": "您可以在此处设置刷新率，使用该刷新率更新工作时间",
+    "automaticReset": "自动复位",
+    "automaticResetTooltip": "插入所需的 cronJob，它会自动重置操作时间。"
 }

@@ -5,5 +5,7 @@
     "mainInformationText": "Do pomiaru godzin pracy nie są wymagane żadne stany zewnętrzne. ",
     "configuration": "konfiguracja",
     "refreshRate": "częstotliwość odświeżania",
-    "refreshRateTooltip": "tutaj możesz ustawić częstotliwość odświeżania, z jaką powinny być aktualizowane godziny pracy"
+    "refreshRateTooltip": "tutaj możesz ustawić częstotliwość odświeżania, z jaką powinny być aktualizowane godziny pracy",
+    "automaticReset": "automatyczny reset",
+    "automaticResetTooltip": "wstaw żądany cronJob, który automatycznie zresetuje godziny pracy."
 }

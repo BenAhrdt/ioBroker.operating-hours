@@ -5,5 +5,7 @@
     "mainInformationText": "Zur Messung der Betriebsstunden sind keine externen Zustände erforderlich. Die unten eingetragenen Namen werden als Zustände in den Objekten des Adapters generiert und dienen zum Aktivieren und Zurücksetzen des Betriebsstundenzählers. (RESET => einfach einen Wert (z.B. den Wert Stunde) auf 0 setzen) Anhand der generierten Zustände können Sie die Aktivierung mit komplexen Bedingungen einfach in einem Skript umsetzen.",
     "configuration": "Konfiguration",
     "refreshRate": "Aktualisierungsrate",
-    "refreshRateTooltip": "Hier können Sie die Aktualisierungsrate einstellen, mit welcher die Betriebsstunden aktualisiert werden sollen"
+    "refreshRateTooltip": "Hier können Sie die Aktualisierungsrate einstellen, mit welcher die Betriebsstunden aktualisiert werden sollen",
+    "automaticReset": "automatischer Reset",
+    "automaticResetTooltip": "Setzen Sie den gewünschten CronJob ein, der automatisch die Betriebsstunden zurücksetzt."
 }

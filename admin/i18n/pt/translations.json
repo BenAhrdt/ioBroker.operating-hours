@@ -5,5 +5,7 @@
     "mainInformationText": "Nenhum estado externo é necessário para medir as horas de operação. ",
     "configuration": "configuração",
     "refreshRate": "taxa de atualização",
-    "refreshRateTooltip": "aqui você pode definir a taxa de atualização, com a qual as horas de operação devem ser atualizadas"
+    "refreshRateTooltip": "aqui você pode definir a taxa de atualização, com a qual as horas de operação devem ser atualizadas",
+    "automaticReset": "reset automático",
+    "automaticResetTooltip": "insira o cronJob desejado, que reseta automaticamente as horas de funcionamento."
 }

@@ -7,6 +7,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
+const schedule = require("node-schedule");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -32,6 +33,7 @@ class OperatingHours extends utils.Adapter {
 		this.configedChannels = {};
 		this.internalIds = {
 			state: "state",
+			resetCronJob: "resetCronJob",
 			timestamp : "timestamp"
 		};
 		this.channelFolders = {
@@ -54,6 +56,9 @@ class OperatingHours extends utils.Adapter {
 		this.timeoutIds = {
 			countingTimeout : "countingTimeout"
 		};
+
+		this.cronJobs ={};
+		this.jobId = "jobId";
 	}
 
 	// Clear all Timeouts, if there are some
@@ -69,13 +74,12 @@ class OperatingHours extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		// Initialize your adapter here
-
 		// Generating the configed id internal (cleared)
 		for(const element of this.config.statesTable){
 			if(!this.configedChannels[this.getChannelId(element[this.internalIds.state])]){
 				this.configedChannels[this.getChannelId(element[this.internalIds.state])] = {};
 				this.configedChannels[this.getChannelId(element[this.internalIds.state])].name = element[this.internalIds.state];
+				this.configedChannels[this.getChannelId(element[this.internalIds.state])].resetCronJob = element[this.internalIds.resetCronJob];
 			}
 			else{
 				this.log.warn(`The id for "${element[this.internalIds.state]}" cound not be created. It is the same as "${this.configedChannels[this.getChannelId(element[this.internalIds.state])].name}".`);
@@ -93,6 +97,9 @@ class OperatingHours extends utils.Adapter {
 
 		// countup the enabled channels
 		this.counting();
+
+		// create cronJobs
+		this.createCronJbs();
 	}
 
 
@@ -281,17 +288,46 @@ class OperatingHours extends utils.Adapter {
 		this.configedChannels[channel].operatingHours.timestring_h_m_s = h_m_s;
 	}
 
+
+	createCronJbs(){
+		for(const channel in this.configedChannels){
+			if(	this.configedChannels[channel].resetCronJob !== null &&
+				this.configedChannels[channel].resetCronJob !== ""){
+				if(!this.cronJobs[this.configedChannels[channel].resetCronJob]){
+					this.cronJobs[this.configedChannels[channel].resetCronJob] = {};
+					this.cronJobs[this.configedChannels[channel].resetCronJob][this.jobId] = schedule.scheduleJob(this.configedChannels[channel].resetCronJob,this.resetWithCronJob.bind(this,this.configedChannels[channel].resetCronJob));
+					if(this.cronJobs[this.configedChannels[channel].resetCronJob][this.jobId]){
+						this.log.debug(`cronjob ${this.configedChannels[channel].resetCronJob} was created.`);
+					}
+					else{
+						this.log.warn(`reset cronjob ${this.configedChannels[channel].resetCronJob} for the state ${channel} can not be created.`);
+					}
+				}
+				this.cronJobs[this.configedChannels[channel].resetCronJob][channel] = {};
+			}
+		}
+	}
+
+	resetWithCronJob(cronJob){
+		for(const ele in this.cronJobs[cronJob]){
+			if(ele != this.jobId){
+				const timestamp = Date.now();
+				this.setOperatingHours(ele,  0, timestamp);
+			}
+		}
+	}
+
 	/**
 	 * Is called when adapter shuts down - callback has to be called under any circumstances!
 	 * @param {() => void} callback
 	 */
 	onUnload(callback) {
 		try {
-			// Here you must clear all timeouts or intervals that may still be active
-			// clearTimeout(timeout1);
-			// clearTimeout(timeout2);
-			// ...
-			// clearInterval(interval1);
+			// clear all schedules
+			for(const cronJob in this.cronJobs)
+			{
+				schedule.cancelJob(this.cronJobs[cronJob][this.jobId]);
+			}
 			this.clearAllTimeouts();
 			callback();
 		} catch (e) {

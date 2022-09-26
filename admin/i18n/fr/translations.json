@@ -5,5 +5,7 @@
     "mainInformationText": "Aucun état externe n'est requis pour mesurer les heures de fonctionnement. ",
     "configuration": "configuration",
     "refreshRate": "fréquence de rafraîchissement",
-    "refreshRateTooltip": "ici, vous pouvez définir le taux de rafraîchissement, avec lequel les heures de fonctionnement doivent être mises à jour"
+    "refreshRateTooltip": "ici, vous pouvez définir le taux de rafraîchissement, avec lequel les heures de fonctionnement doivent être mises à jour",
+    "automaticReset": "réinitialisation automatique",
+    "automaticResetTooltip": "insérez le cronJob souhaité, qui réinitialise automatiquement les heures de fonctionnement."
 }

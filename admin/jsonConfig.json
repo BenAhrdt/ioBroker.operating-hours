@@ -57,6 +57,13 @@
                     "filter": true,
                     "sort": false,
                     "allowAddByFilter": true
+                },
+                {
+                  "type": "cron",
+                  "attr": "resetCronJob",
+                  "complex": true,
+                  "label": "automaticReset",
+                  "tooltip": "automaticResetTooltip"
                 }
             ]
         }

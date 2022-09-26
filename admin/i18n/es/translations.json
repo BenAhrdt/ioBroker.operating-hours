@@ -5,5 +5,7 @@
     "mainInformationText": "No se requieren estados externos para medir las horas de funcionamiento. ",
     "configuration": "configuración",
     "refreshRate": "frecuencia de actualización",
-    "refreshRateTooltip": "aquí puede configurar la frecuencia de actualización, con la que se deben actualizar las horas de funcionamiento"
+    "refreshRateTooltip": "aquí puede configurar la frecuencia de actualización, con la que se deben actualizar las horas de funcionamiento",
+    "automaticReset": "reinicio automático",
+    "automaticResetTooltip": "inserte el cronJob deseado, que restablece automáticamente las horas de funcionamiento."
 }
