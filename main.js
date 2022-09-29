@@ -49,7 +49,8 @@ class OperatingHours extends utils.Adapter {
 			timestring_h_m_s :{name:"timestring_h_m_s",type:"string",write:false,unit:"h:m:s",def:""}
 		};
 		this.administrative = {
-			enableCounting : {name:"enableCounting", write:true}
+			enableCounting : {name:"enableCounting", type:"boolean", write:true, def:false},
+			activationCounter : {name:"activationCounter", type:"number", write:false, def:0}
 		};
 
 		this.timeouts = {};
@@ -208,11 +209,11 @@ class OperatingHours extends utils.Adapter {
 					type: "state",
 					common: {
 						name: administrative.name,
-						type: "boolean",
+						type: administrative.type,
 						role: "value",
 						read: true,
 						write: administrative.write,
-						def: false
+						def: administrative.def
 					},
 					native: {},
 				});
@@ -224,7 +225,7 @@ class OperatingHours extends utils.Adapter {
 					this.configedChannels[channel][this.channelFolders.administrative][administrative.name] = state.val;
 				}
 				else{
-					this.configedChannels[channel][this.channelFolders.administrative][administrative.name] = false;
+					this.configedChannels[channel][this.channelFolders.administrative][administrative.name] = administrative.def;
 				}
 			}
 
@@ -286,6 +287,17 @@ class OperatingHours extends utils.Adapter {
 		this.configedChannels[channel].operatingHours.timestring_h_m = h_m;
 		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.timestring_h_m_s.name}`,h_m_s,true);
 		this.configedChannels[channel].operatingHours.timestring_h_m_s = h_m_s;
+
+		// Rücksetzen des counters, wenn die millesekunden 0 sind
+		if(milliseconds === 0){
+			if(this.configedChannels[channel].administrative.enableCounting){
+				this.configedChannels[channel].administrative.activationCounter = 1;
+			}
+			else{
+				this.configedChannels[channel].administrative.activationCounter =0;
+			}
+			this.setState(`${channel}.${this.channelFolders.administrative}.${this.administrative.activationCounter.name}`,this.configedChannels[channel].administrative.activationCounter ,true);
+		}
 	}
 
 
@@ -365,6 +377,9 @@ class OperatingHours extends utils.Adapter {
 					if(state.val !== lastState){
 						// Abfrage, ob der neue Wert true ist
 						if(state.val){
+							// Hochzählen des aktivierungscounters
+							this.configedChannels[channel].administrative.activationCounter += 1;
+							this.setState(`${channel}.${this.channelFolders.administrative}.${this.administrative.activationCounter.name}`,this.configedChannels[channel].administrative.activationCounter,true);
 							this.configedChannels[channel].timestamp = state.ts;
 							if(!this.timeouts.countingTimeout){
 								this.timeouts.countingTimeout = setTimeout(this.counting.bind(this),this.config.refreshRate);
