@@ -19,7 +19,7 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS** count the activation
+### 0.0.17 (2022-09-29) count the activation
 * (BenAhrdt) activation counter implemented to count the enable flags
 
 ### 0.0.16 (2022-09-26) automatic reset timestamp improoved

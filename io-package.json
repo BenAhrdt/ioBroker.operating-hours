@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "news": {
+      "0.0.17": {
+        "en": "activation counter implemented to count the enable flags",
+        "de": "aktivierungszähler implementiert, um die freigabe-flags zu zählen",
+        "ru": "счетчик активации реализован для подсчета разрешительных флагов",
+        "pt": "contador de ativação implementado para contar as bandeiras de habilitação",
+        "nl": "activatie tegenhanger gevoerd om de bekwame vlaggen te tellen",
+        "fr": "compteur d'activation mis en œuvre pour compter les drapeaux",
+        "it": "contatore di attivazione implementato per contare le bandiere abilitanti",
+        "es": "contador de activación implementado para contar las banderas habilitantes",
+        "pl": "kontrowersja aktywacyjna zaimplementowała wyliczanie flag pozwalających na przeliczanie flag",
+        "zh-cn": "a. 实施的反击,以计算可能的船旗国"
+      },
       "0.0.16": {
         "en": "all states with the same resetCronjob became the same timestamp",
         "de": "alle Staaten mit dem gleichen resetCronjob wurde der gleiche zeitstempel",
@@ -74,18 +86,6 @@
         "es": "id no puede terminar con \"",
         "pl": "atak: id nie może zakończyć się „”",
         "zh-cn": "b ugfix:不用“......”二字。"
-      },
-      "0.0.10": {
-        "en": "deleting a require bugfix",
-        "de": "löschen von bugfix",
-        "ru": "удаление необходимого багфикса",
-        "pt": "exclusão de um bugfix requerer",
-        "nl": "een vereiste afluisterapparatuur",
-        "fr": "supprimer un bugfix",
-        "it": "eliminare un bugfix richiesto",
-        "es": "eliminar un bugfix",
-        "pl": "wyrzucając wymagający bugfix",
-        "zh-cn": "删除要求的软禁"
       }
     },
     "title": "Operating-Hours",
