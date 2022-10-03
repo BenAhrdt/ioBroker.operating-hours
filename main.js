@@ -45,8 +45,11 @@ class OperatingHours extends utils.Adapter {
 			seconds : {name:"seconds",type:"number",write:true,unit:"s",def:0},
 			minutes : {name:"minutes",type:"number",write:true,unit:"min",def:0},
 			hours : {name:"hours",type:"number",write:true,unit:"h",def:0},
+			days : {name:"days",type:"number",write:true,unit:"d",def:0},
 			timestring_h_m :{name:"timestring_h_m",type:"string",write:false,unit:"h:m",def:""},
-			timestring_h_m_s :{name:"timestring_h_m_s",type:"string",write:false,unit:"h:m:s",def:""}
+			timestring_h_m_s :{name:"timestring_h_m_s",type:"string",write:false,unit:"h:m:s",def:""},
+			timestring_d_h_m_s :{name:"timestring_d_h_m_s",type:"string",write:false,unit:"d:h:m:s",def:""},
+			json :{name:"json",type:"string",write:false,unit:"",def:""}
 		};
 		this.administrative = {
 			enableCounting : {name:"enableCounting", type:"boolean", write:true, def:false},
@@ -264,6 +267,9 @@ class OperatingHours extends utils.Adapter {
 		const seconds = milliseconds/1000;
 		const minutes = milliseconds/60000;
 		const hours = milliseconds/3600000;
+		const days = milliseconds/86400000;
+
+		// Erzeugen der Strings mit Stunden
 		const hourlength = Math.trunc(hours).toString().length;
 		let hourstring = "00";
 		let hourindex = 2;
@@ -271,7 +277,58 @@ class OperatingHours extends utils.Adapter {
 			hourstring += "0";
 		}
 		const h_m = (hourstring + Math.trunc(hours).toString()).slice(-hourindex) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2);
-		const h_m_s = (hourstring + Math.trunc(hours).toString()).slice(-hourindex) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2) + ":" + ("00" + Math.trunc((seconds%60)).toString()).slice(-2);
+		const h_m_s = h_m + ":" + ("00" + Math.trunc((seconds%60)).toString()).slice(-2);
+
+		// Erzeugen des String mit Tagen
+		const hourlengthWithDays = Math.trunc(hours%24).toString().length;
+		let hourstringWithDays = "00";
+		let hourindexWithDays = 2;
+		for(hourindexWithDays; hourindexWithDays < hourlengthWithDays; hourindexWithDays++){
+			hourstringWithDays += "0";
+		}
+		const h_mWithDays = (hourstringWithDays + Math.trunc(hours%24).toString()).slice(-hourindexWithDays) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2);
+		const h_m_sWithDays = h_mWithDays + ":" + ("00" + Math.trunc((seconds%60)).toString()).slice(-2);
+
+		const daylength = Math.trunc(days).toString().length;
+		let daystring = "00";
+		let dayindex = 2;
+		for(dayindex; dayindex < daylength; dayindex++){
+			daystring += "0";
+		}
+		const d_h_m_s = (daystring + Math.trunc(days).toString()).slice(-dayindex) + ":" + h_m_sWithDays;
+
+		// Erzeugen des Json Objekts für den JSON-String
+		const json = {};
+		let internalMillisecons = milliseconds;
+		if(Math.trunc(days) > 0){
+			internalMillisecons -= Math.trunc(days) * 86400000;
+			json.days = Math.trunc(days);
+		}
+		else{
+			json.days = 0;
+		}
+		if(Math.trunc(hours%24) > 0){
+			internalMillisecons -= Math.trunc(hours%24) * 3600000;
+			json.hours = Math.trunc(hours%24);
+		}
+		else{
+			json.hours = 0;
+		}
+		if(Math.trunc(minutes%60) > 0){
+			internalMillisecons -= Math.trunc(minutes%60) * 60000;
+			json.minutes = Math.trunc(minutes%60);
+		}
+		else{
+			json.minutes = 0;
+		}
+		if(Math.trunc(seconds%60) > 0){
+			internalMillisecons -= Math.trunc(seconds%60) * 1000;
+			json.seconds = Math.trunc(seconds%60);
+		}
+		else{
+			json.seconds = 0;
+		}
+		json.milliseconds = internalMillisecons;
 
 		// Schreiben der states
 		this.configedChannels[channel].timestamp = ts;
@@ -283,10 +340,16 @@ class OperatingHours extends utils.Adapter {
 		this.configedChannels[channel].operatingHours.minutes = minutes;
 		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.hours.name}`,hours,true);
 		this.configedChannels[channel].operatingHours.hours = hours;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.days.name}`,days,true);
+		this.configedChannels[channel].operatingHours.days = days;
 		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.timestring_h_m.name}`,h_m,true);
 		this.configedChannels[channel].operatingHours.timestring_h_m = h_m;
 		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.timestring_h_m_s.name}`,h_m_s,true);
 		this.configedChannels[channel].operatingHours.timestring_h_m_s = h_m_s;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.timestring_d_h_m_s.name}`,d_h_m_s,true);
+		this.configedChannels[channel].operatingHours.timestring_d_h_m_s = d_h_m_s;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.json.name}`,JSON.stringify(json),true);
+		this.configedChannels[channel].operatingHours.json = json;
 
 		// Rücksetzen des counters, wenn die millesekunden 0 sind
 		if(milliseconds === 0){
@@ -417,6 +480,11 @@ class OperatingHours extends utils.Adapter {
 						else if(newId.indexOf(this.operatingHours.hours.name) !== -1){
 							if(state.val !== null){
 								milliseconds = state.val * 3600000;
+							}
+						}
+						else if(newId.indexOf(this.operatingHours.days.name) !== -1){
+							if(state.val !== null){
+								milliseconds = state.val * 86400000;
 							}
 						}
 						this.setOperatingHours(channel,milliseconds,state.ts);
