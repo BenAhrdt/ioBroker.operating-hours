@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.17",
+    "version": "0.0.18",
     "news": {
+      "0.0.18": {
+        "en": "adding days states, additional string and json state",
+        "de": "hinzufügen von tagen zuständen, zusätzlicher string und json zustand",
+        "ru": "добавление дней состояния, дополнительная строка и json состояние",
+        "pt": "adicionando estados de dias, string adicional e estado json",
+        "nl": "vertaling:",
+        "fr": "ajouter des états de jours, une chaîne supplémentaire et l'état de json",
+        "it": "aggiungere stati di giorni, stringa aggiuntiva e stato json",
+        "es": "añadir días estados, cadena adicional y estado json",
+        "pl": "dodaje dni, dodatkowe struny i stany jsonów",
+        "zh-cn": "增加日子、附加条件和礼拜州"
+      },
       "0.0.17": {
         "en": "activation counter implemented to count the enable flags",
         "de": "aktivierungszähler implementiert, um die freigabe-flags zu zählen",
@@ -74,18 +86,6 @@
         "es": "regex for \".\" on last character implemented",
         "pl": "\"w ostatniej postaci zrealizowano\"",
         "zh-cn": "实施最后性质中的“......”的登记"
-      },
-      "0.0.11": {
-        "en": "bugfix: id can not end with \".\" anymore",
-        "de": "bugfix: id kann nicht mehr mit \" enden",
-        "ru": "bugfix: id не может заканчиваться \".\" больше",
-        "pt": "bugfix: id não pode terminar com \"",
-        "nl": "id kan niet meer eindigen met \"",
-        "fr": "bugfix: id ne peut plus se terminer avec \".\"",
-        "it": "bugfix: id non può finire con \"",
-        "es": "id no puede terminar con \"",
-        "pl": "atak: id nie może zakończyć się „”",
-        "zh-cn": "b ugfix:不用“......”二字。"
       }
     },
     "title": "Operating-Hours",
