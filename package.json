@@ -20,7 +20,7 @@
     "url": "https://github.com/BenAhrdt/ioBroker.operating-hours"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.6.0",
+    "@iobroker/adapter-core": "^2.6.6",
     "node-schedule": "^2.1.0"
   },
   "devDependencies": {
