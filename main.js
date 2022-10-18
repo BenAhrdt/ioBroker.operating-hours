@@ -49,7 +49,8 @@ class OperatingHours extends utils.Adapter {
 			timestring_h_m :{name:"timestring_h_m",type:"string",write:false,unit:"h:m",def:""},
 			timestring_h_m_s :{name:"timestring_h_m_s",type:"string",write:false,unit:"h:m:s",def:""},
 			timestring_d_h_m_s :{name:"timestring_d_h_m_s",type:"string",write:false,unit:"d:h:m:s",def:""},
-			json :{name:"json",type:"string",write:false,unit:"",def:""}
+			json :{name:"json",type:"string",write:false,unit:"",def:""},
+			averageOnTime_h_m_s :{name:"averageOnTime_h_m_s",type:"string",write:false,unit:"h:m:s",def:""},
 		};
 		this.administrative = {
 			enableCounting : {name:"enableCounting", type:"boolean", write:true, def:false},
@@ -330,6 +331,20 @@ class OperatingHours extends utils.Adapter {
 		}
 		json.milliseconds = internalMillisecons;
 
+		// Berechnen der mittleren Einschaltzeit
+		const averageOnTimeSeconds = seconds / this.configedChannels[channel].administrative.activationCounter;
+		const averageOnTimeMinutes = minutes / this.configedChannels[channel].administrative.activationCounter;
+		const averageOnTimeHours = hours / this.configedChannels[channel].administrative.activationCounter;
+
+		// Erzeugen der Strings mit Stunden
+		const averagehourlength = Math.trunc(averageOnTimeHours).toString().length;
+		let averagehourstring = "00";
+		let averagehourindex = 2;
+		for(averagehourindex; averagehourindex < averagehourlength; averagehourindex++){
+			averagehourstring += "0";
+		}
+		const averageOnTime_h_m_s = (averagehourstring + Math.trunc(averageOnTimeHours).toString()).slice(-averagehourindex) + ":" + ("00" + Math.trunc((averageOnTimeMinutes%60)).toString()).slice(-2) + ":" + ("00" + Math.trunc((averageOnTimeSeconds%60)).toString()).slice(-2);
+
 		// Schreiben der states
 		this.configedChannels[channel].timestamp = ts;
 		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.milliseconds.name}`,milliseconds,true);
@@ -350,6 +365,8 @@ class OperatingHours extends utils.Adapter {
 		this.configedChannels[channel].operatingHours.timestring_d_h_m_s = d_h_m_s;
 		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.json.name}`,JSON.stringify(json),true);
 		this.configedChannels[channel].operatingHours.json = json;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.averageOnTime_h_m_s.name}`,averageOnTime_h_m_s,true);
+		this.configedChannels[channel].operatingHours.averageOnTime_h_m_s = averageOnTime_h_m_s;
 
 		// Rücksetzen des counters, wenn die millesekunden 0 sind
 		if(milliseconds === 0){
