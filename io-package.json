@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "0.0.19",
+    "version": "1.0.0",
     "news": {
+      "1.0.0": {
+        "en": "dependencies updated for version 1.0.0",
+        "de": "abhängigkeiten aktualisiert für die version 1.0.0",
+        "ru": "зависимости обновлены для версии 1.0.0",
+        "pt": "dependências atualizadas para a versão 1.0.0",
+        "nl": "vertaling: 1.0",
+        "fr": "dépendances mises à jour pour la version 1.0.0",
+        "it": "dipendenze aggiornate per la versione 1.0.0",
+        "es": "dependencias actualizadas para la versión 1.0.0",
+        "pl": "zależności od wersji 1",
+        "uk": "залежності оновлено для версії 1.0.0 км",
+        "zh-cn": "二. 更新后的承诺期 1.0%"
+      },
       "0.0.19": {
         "en": "average on time indicates a string this formular: operatingHour/activationCounter",
         "de": "durchschnittlich auf der Zeit gibt einen String diesen Formelr an: Geruch/Aktivierung Anzahl",
@@ -75,18 +88,6 @@
         "es": "añadir refrescante en config",
         "pl": "dodać",
         "zh-cn": "增加一倍"
-      },
-      "0.0.13": {
-        "en": "set admin dependencies to >= 6.2.17",
-        "de": "adminabhängigkeiten auf >= 6.2.17 einstellen",
-        "ru": "установить админ зависимости от >= 6.2.17",
-        "pt": "definir dependências de administrador para >= 6.2.17",
-        "nl": "zet administratie afhankelijk van 6.2.17",
-        "fr": "définir les dépendances d'administration à phy= 6.2.17",
-        "it": ">= 6.2.17",
-        "es": "establecer las dependencias de administración para",
-        "pl": "zawartość admini zależy od >= 6.2.17",
-        "zh-cn": "确定危急情况"
       }
     },
     "title": "Operating-Hours",
