@@ -19,6 +19,9 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (BenAhrdt) dependencies updated for version 1.0.0
+
 ### 0.0.19 (2022-10-18) adding average on time
 * (BenAhrdt) average on time indicates a string this formular: operatingHour/activationCounter
 
