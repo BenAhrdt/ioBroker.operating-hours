@@ -1,168 +1,168 @@
 {
-    "common": {
-        "name": "operating-hours",
-        "version": "1.0.0",
-        "news": {
-            "1.0.0": {
-                "en": "dependencies updated for version 1.0.0",
-                "de": "abhängigkeiten aktualisiert für die version 1.0.0",
-                "ru": "зависимости обновлены для версии 1.0.0",
-                "pt": "dependências atualizadas para a versão 1.0.0",
-                "nl": "vertaling: 1.0",
-                "fr": "dépendances mises à jour pour la version 1.0.0",
-                "it": "dipendenze aggiornate per la versione 1.0.0",
-                "es": "dependencias actualizadas para la versión 1.0.0",
-                "pl": "zależności od wersji 1",
-                "uk": "залежності оновлено для версії 1.0.0 км",
-                "zh-cn": "二. 更新后的承诺期 1.0%"
-            },
-            "0.0.19": {
-                "en": "average on time indicates a string this formular: operatingHour/activationCounter",
-                "de": "durchschnittlich auf der Zeit gibt einen String diesen Formelr an: Geruch/Aktivierung Anzahl",
-                "ru": "средний по времени указывает на строку эту формулу: работа Час/активация Счетчик",
-                "pt": "média no tempo indica uma string este formulador: operando Hour/ativação Contador",
-                "nl": "gemiddeld op tijd wijst op een string deze formulering: Hour/activatie Contra",
-                "fr": "moyenne sur le temps indique une chaîne de ce formuleur: fonctionnement Heure/activation Counter",
-                "it": "media in tempo indica una stringa questo formulare: operativo Orario/attivazione Contatore",
-                "es": "promedio en el tiempo indica una cadena este formulario: el funcionamiento Hora/activación Contrato",
-                "pl": "średnio w czasie oznacza to sygnalizację sygnalną: funkcjonującą w tym czasie. godzina i aktywacja kontrkandydat",
-                "uk": "середній на час вказує рядок цей формулатор: операційний Час/активація Лічильник",
-                "zh-cn": "平均时间表示这种形式:操作 Hour/启动 反对"
-            },
-            "0.0.18": {
-                "en": "adding days states, additional string and json state",
-                "de": "hinzufügen von tagen zuständen, zusätzlicher string und json zustand",
-                "ru": "добавление дней состояния, дополнительная строка и json состояние",
-                "pt": "adicionando estados de dias, string adicional e estado json",
-                "nl": "vertaling:",
-                "fr": "ajouter des états de jours, une chaîne supplémentaire et l'état de json",
-                "it": "aggiungere stati di giorni, stringa aggiuntiva e stato json",
-                "es": "añadir días estados, cadena adicional y estado json",
-                "pl": "dodaje dni, dodatkowe struny i stany jsonów",
-                "zh-cn": "增加日子、附加条件和礼拜州",
-                "uk": "додавання станів днів, додаткового рядка та стану json"
-            },
-            "0.0.17": {
-                "en": "activation counter implemented to count the enable flags",
-                "de": "aktivierungszähler implementiert, um die freigabe-flags zu zählen",
-                "ru": "счетчик активации реализован для подсчета разрешительных флагов",
-                "pt": "contador de ativação implementado para contar as bandeiras de habilitação",
-                "nl": "activatie tegenhanger gevoerd om de bekwame vlaggen te tellen",
-                "fr": "compteur d'activation mis en œuvre pour compter les drapeaux",
-                "it": "contatore di attivazione implementato per contare le bandiere abilitanti",
-                "es": "contador de activación implementado para contar las banderas habilitantes",
-                "pl": "kontrowersja aktywacyjna zaimplementowała wyliczanie flag pozwalających na przeliczanie flag",
-                "zh-cn": "a. 实施的反击,以计算可能的船旗国",
-                "uk": "реалізований лічильник активації для підрахунку позначок увімкнення"
-            },
-            "0.0.16": {
-                "en": "all states with the same resetCronjob became the same timestamp",
-                "de": "alle Staaten mit dem gleichen resetCronjob wurde der gleiche zeitstempel",
-                "ru": "все государства с тем же resetCronjob стали тем же временным примером",
-                "pt": "todos os estados com o mesmo resetCronjob tornou-se o mesmo timestamp",
-                "nl": "alle staten met dezelfde resetCronjob werden dezelfde tijdtamp",
-                "fr": "tous les états avec la même réinitialisationCronjob est devenu le même timetamp",
-                "it": "tutti gli stati con lo stesso resetCronjob è diventato lo stesso timestamp",
-                "es": "todos los estados con el mismo resetCronjob se convirtió en el mismo timetamp",
-                "pl": "wszystkie stany o tej samej resetCronjob stały się tym samym numerem czasu",
-                "zh-cn": "拥有同一重新组合的所有国家也成为同样时间的amp。",
-                "uk": "усі стани з однаковим resetCronjob стали однаковою міткою часу"
-            },
-            "0.0.15": {
-                "en": "add config to declare automatic reset for every state",
-                "de": "config hinzufügen, um den automatischen reset für jeden staat zu erklären",
-                "ru": "добавить config, чтобы объявить автоматический сброс для каждого государства",
-                "pt": "adicionar config para declarar reset automático para cada estado",
-                "nl": "voeg config toe om automatisch reset te verklaren voor elke staat",
-                "fr": "ajouter la configuration pour déclarer la réinitialisation automatique pour chaque état",
-                "it": "aggiungere config per dichiarare reset automatico per ogni stato",
-                "es": "añadir configuración para declarar el restablecimiento automático de cada estado",
-                "pl": "deklarowanie automatycznego resetu dla każdego państwa",
-                "zh-cn": "增加一概宣布每个州自动重新开始",
-                "uk": "додайте конфігурацію, щоб оголосити автоматичне скидання для кожного стану"
-            },
-            "0.0.14": {
-                "en": "add refreshrate into config",
-                "de": "erfrischung in config hinzufügen",
-                "ru": "добавить освежающий в config",
-                "pt": "adicionar atualização em config",
-                "nl": "verfrissing in configuur",
-                "fr": "ajouter le rafraîchissement dans la configuration",
-                "it": "aggiungere rinfrescare in configurazione",
-                "es": "añadir refrescante en config",
-                "pl": "dodać",
-                "zh-cn": "增加一倍",
-                "uk": "додати оновлення в конфігурацію"
-            }
-        },
-        "title": "Operating-Hours",
-        "titleLang": {
-            "en": "Operating-Hours",
-            "de": "Betriebsstunden",
-            "ru": "Часы работы",
-            "pt": "Horas de funcionamento",
-            "nl": "Werk uren",
-            "fr": "Heures d'ouverture",
-            "it": "Ore di servizio",
-            "es": "Horas de funcionamiento",
-            "pl": "Godziny pracy",
-            "zh-cn": "营业时间",
-            "uk": "Години роботи"
-        },
-        "desc": {
-            "en": "counting the operationg hours of own created states",
-            "de": "Zählen der Betriebsstunden von selbst erstellten Zuständen",
-            "ru": "подсчет часов работы собственных созданных состояний",
-            "pt": "contando as horas de operação dos próprios estados criados",
-            "nl": "het tellen van de bedrijfsuren van eigen aangemaakte toestanden",
-            "fr": "compter les heures de fonctionnement des propres états créés",
-            "it": "contando le ore di funzionamento dei propri stati creati",
-            "es": "contando las horas de funcionamiento de los propios estados creados",
-            "pl": "zliczanie godzin pracy własnych utworzonych państw",
-            "zh-cn": "计算自己创建的状态的运行时间",
-            "uk": "підрахунок годин роботи власно створених станів"
-        },
-        "authors": [
-            "BenAhrdt <bsahrdt@gmail.com>"
-        ],
-        "keywords": [
-            "operating",
-            "hours",
-            "Betriebsstunden",
-            "Zähler",
-            "counter"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "operating-hours.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.operating-hours/main/admin/operating-hours.png",
-        "readme": "https://github.com/BenAhrdt/ioBroker.operating-hours/blob/main/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "metering",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "push",
-        "adminUI": {
-            "config": "json"
-        },
-        "globalDependencies": [
-            {
-                "admin": ">=6.2.17"
-            }
-        ],
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ]
+  "common": {
+    "name": "operating-hours",
+    "version": "1.0.1",
+    "news": {
+      "1.0.1": {
+        "en": "unkrain language added",
+        "de": "unkrainische sprache hinzugefügt",
+        "ru": "unkrain язык добавлен",
+        "pt": "unkrain language adicionado",
+        "nl": "_",
+        "fr": "unkrain language added",
+        "it": "lingua unkrain aggiunto",
+        "es": "idioma unkrain añadido",
+        "pl": "język niepotrzebny",
+        "uk": "додана мова",
+        "zh-cn": "地形语言增加了"
+      },
+      "1.0.0": {
+        "en": "dependencies updated for version 1.0.0",
+        "de": "abhängigkeiten aktualisiert für die version 1.0.0",
+        "ru": "зависимости обновлены для версии 1.0.0",
+        "pt": "dependências atualizadas para a versão 1.0.0",
+        "nl": "vertaling: 1.0",
+        "fr": "dépendances mises à jour pour la version 1.0.0",
+        "it": "dipendenze aggiornate per la versione 1.0.0",
+        "es": "dependencias actualizadas para la versión 1.0.0",
+        "pl": "zależności od wersji 1",
+        "uk": "залежності оновлено для версії 1.0.0 км",
+        "zh-cn": "二. 更新后的承诺期 1.0%"
+      },
+      "0.0.19": {
+        "en": "average on time indicates a string this formular: operatingHour/activationCounter",
+        "de": "durchschnittlich auf der Zeit gibt einen String diesen Formelr an: Geruch/Aktivierung Anzahl",
+        "ru": "средний по времени указывает на строку эту формулу: работа Час/активация Счетчик",
+        "pt": "média no tempo indica uma string este formulador: operando Hour/ativação Contador",
+        "nl": "gemiddeld op tijd wijst op een string deze formulering: Hour/activatie Contra",
+        "fr": "moyenne sur le temps indique une chaîne de ce formuleur: fonctionnement Heure/activation Counter",
+        "it": "media in tempo indica una stringa questo formulare: operativo Orario/attivazione Contatore",
+        "es": "promedio en el tiempo indica una cadena este formulario: el funcionamiento Hora/activación Contrato",
+        "pl": "średnio w czasie oznacza to sygnalizację sygnalną: funkcjonującą w tym czasie. godzina i aktywacja kontrkandydat",
+        "uk": "середній на час вказує рядок цей формулатор: операційний Час/активація Лічильник",
+        "zh-cn": "平均时间表示这种形式:操作 Hour/启动 反对"
+      },
+      "0.0.18": {
+        "en": "adding days states, additional string and json state",
+        "de": "hinzufügen von tagen zuständen, zusätzlicher string und json zustand",
+        "ru": "добавление дней состояния, дополнительная строка и json состояние",
+        "pt": "adicionando estados de dias, string adicional e estado json",
+        "nl": "vertaling:",
+        "fr": "ajouter des états de jours, une chaîne supplémentaire et l'état de json",
+        "it": "aggiungere stati di giorni, stringa aggiuntiva e stato json",
+        "es": "añadir días estados, cadena adicional y estado json",
+        "pl": "dodaje dni, dodatkowe struny i stany jsonów",
+        "zh-cn": "增加日子、附加条件和礼拜州",
+        "uk": "додавання станів днів, додаткового рядка та стану json"
+      },
+      "0.0.17": {
+        "en": "activation counter implemented to count the enable flags",
+        "de": "aktivierungszähler implementiert, um die freigabe-flags zu zählen",
+        "ru": "счетчик активации реализован для подсчета разрешительных флагов",
+        "pt": "contador de ativação implementado para contar as bandeiras de habilitação",
+        "nl": "activatie tegenhanger gevoerd om de bekwame vlaggen te tellen",
+        "fr": "compteur d'activation mis en œuvre pour compter les drapeaux",
+        "it": "contatore di attivazione implementato per contare le bandiere abilitanti",
+        "es": "contador de activación implementado para contar las banderas habilitantes",
+        "pl": "kontrowersja aktywacyjna zaimplementowała wyliczanie flag pozwalających na przeliczanie flag",
+        "zh-cn": "a. 实施的反击,以计算可能的船旗国",
+        "uk": "реалізований лічильник активації для підрахунку позначок увімкнення"
+      },
+      "0.0.16": {
+        "en": "all states with the same resetCronjob became the same timestamp",
+        "de": "alle Staaten mit dem gleichen resetCronjob wurde der gleiche zeitstempel",
+        "ru": "все государства с тем же resetCronjob стали тем же временным примером",
+        "pt": "todos os estados com o mesmo resetCronjob tornou-se o mesmo timestamp",
+        "nl": "alle staten met dezelfde resetCronjob werden dezelfde tijdtamp",
+        "fr": "tous les états avec la même réinitialisationCronjob est devenu le même timetamp",
+        "it": "tutti gli stati con lo stesso resetCronjob è diventato lo stesso timestamp",
+        "es": "todos los estados con el mismo resetCronjob se convirtió en el mismo timetamp",
+        "pl": "wszystkie stany o tej samej resetCronjob stały się tym samym numerem czasu",
+        "zh-cn": "拥有同一重新组合的所有国家也成为同样时间的amp。",
+        "uk": "усі стани з однаковим resetCronjob стали однаковою міткою часу"
+      },
+      "0.0.15": {
+        "en": "add config to declare automatic reset for every state",
+        "de": "config hinzufügen, um den automatischen reset für jeden staat zu erklären",
+        "ru": "добавить config, чтобы объявить автоматический сброс для каждого государства",
+        "pt": "adicionar config para declarar reset automático para cada estado",
+        "nl": "voeg config toe om automatisch reset te verklaren voor elke staat",
+        "fr": "ajouter la configuration pour déclarer la réinitialisation automatique pour chaque état",
+        "it": "aggiungere config per dichiarare reset automatico per ogni stato",
+        "es": "añadir configuración para declarar el restablecimiento automático de cada estado",
+        "pl": "deklarowanie automatycznego resetu dla każdego państwa",
+        "zh-cn": "增加一概宣布每个州自动重新开始",
+        "uk": "додайте конфігурацію, щоб оголосити автоматичне скидання для кожного стану"
+      }
     },
-    "native": {
-        "refreshRate": 6000,
-        "statesTable": []
+    "title": "Operating-Hours",
+    "titleLang": {
+      "en": "Operating-Hours",
+      "de": "Betriebsstunden",
+      "ru": "Часы работы",
+      "pt": "Horas de funcionamento",
+      "nl": "Werk uren",
+      "fr": "Heures d'ouverture",
+      "it": "Ore di servizio",
+      "es": "Horas de funcionamiento",
+      "pl": "Godziny pracy",
+      "zh-cn": "营业时间",
+      "uk": "Години роботи"
     },
-    "objects": [],
-    "instanceObjects": []
+    "desc": {
+      "en": "counting the operationg hours of own created states",
+      "de": "Zählen der Betriebsstunden von selbst erstellten Zuständen",
+      "ru": "подсчет часов работы собственных созданных состояний",
+      "pt": "contando as horas de operação dos próprios estados criados",
+      "nl": "het tellen van de bedrijfsuren van eigen aangemaakte toestanden",
+      "fr": "compter les heures de fonctionnement des propres états créés",
+      "it": "contando le ore di funzionamento dei propri stati creati",
+      "es": "contando las horas de funcionamiento de los propios estados creados",
+      "pl": "zliczanie godzin pracy własnych utworzonych państw",
+      "zh-cn": "计算自己创建的状态的运行时间",
+      "uk": "підрахунок годин роботи власно створених станів"
+    },
+    "authors": [
+      "BenAhrdt <bsahrdt@gmail.com>"
+    ],
+    "keywords": [
+      "operating",
+      "hours",
+      "Betriebsstunden",
+      "Zähler",
+      "counter"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "operating-hours.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.operating-hours/main/admin/operating-hours.png",
+    "readme": "https://github.com/BenAhrdt/ioBroker.operating-hours/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "metering",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "globalDependencies": [
+      {
+        "admin": ">=6.2.17"
+      }
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">=2.0.0"
+      }
+    ]
+  },
+  "native": {
+    "refreshRate": 6000,
+    "statesTable": []
+  },
+  "objects": [],
+  "instanceObjects": []
 }
