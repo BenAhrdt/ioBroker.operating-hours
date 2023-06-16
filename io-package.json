@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "news": {
+      "1.0.2": {
+        "en": "messagfunction added: now its possible to read the current operationhour out by sendTo",
+        "de": "messagfunction fügte hinzu: jetzt ist es möglich, die aktuelle Betriebsstunde durch Senden zu lesen Zu",
+        "ru": "messagfunction добавил: теперь его можно прочитать текущий часы работы по электронной почте В",
+        "pt": "messagfunction adicionado: agora é possível ler a operação atualhora fora por enviar Para",
+        "nl": "vertaling: ♪",
+        "fr": "messagfonction ajouté: maintenant son possible de lire l'heure de fonctionnement actuelle en envoyer To",
+        "it": "messagfunzione aggiunta: ora è possibile leggere l'attuale operazioneora fuori inviando A",
+        "es": "messagfunction añadido: ahora es posible leer la hora actual de operación por enviar A",
+        "pl": "funkcja mesagresywna dodawała: teraz można odczytać bieżącą operację. Aby to zrobić",
+        "uk": "javaScript licenses API Веб-сайт Go1.13.8 до",
+        "zh-cn": "信袋功能增加:现在有可能通过发送来阅读目前业务小时。 导 言"
+      },
       "1.0.1": {
         "en": "unkrain language added",
         "de": "unkrainische sprache hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "wszystkie stany o tej samej resetCronjob stały się tym samym numerem czasu",
         "zh-cn": "拥有同一重新组合的所有国家也成为同样时间的amp。",
         "uk": "усі стани з однаковим resetCronjob стали однаковою міткою часу"
-      },
-      "0.0.15": {
-        "en": "add config to declare automatic reset for every state",
-        "de": "config hinzufügen, um den automatischen reset für jeden staat zu erklären",
-        "ru": "добавить config, чтобы объявить автоматический сброс для каждого государства",
-        "pt": "adicionar config para declarar reset automático para cada estado",
-        "nl": "voeg config toe om automatisch reset te verklaren voor elke staat",
-        "fr": "ajouter la configuration pour déclarer la réinitialisation automatique pour chaque état",
-        "it": "aggiungere config per dichiarare reset automatico per ogni stato",
-        "es": "añadir configuración para declarar el restablecimiento automático de cada estado",
-        "pl": "deklarowanie automatycznego resetu dla każdego państwa",
-        "zh-cn": "增加一概宣布每个州自动重新开始",
-        "uk": "додайте конфігурацію, щоб оголосити автоматичне скидання для кожного стану"
       }
     },
     "title": "Operating-Hours",
