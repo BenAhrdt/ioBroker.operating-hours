@@ -25,7 +25,7 @@ class OperatingHours extends utils.Adapter {
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
 		// this.on("objectChange", this.onObjectChange.bind(this));
-		// this.on("message", this.onMessage.bind(this));
+		this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 
 		this.AdapterObjectsAtStart = {};
@@ -513,6 +513,42 @@ class OperatingHours extends utils.Adapter {
 			this.log.info(`state ${id} deleted`);
 		}
 	}
+
+	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
+	// /**
+	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
+	//  * Using this method requires "common.messagebox" property to be set to true in io-package.json
+	//  * @param {ioBroker.Message} obj
+	//  */
+	onMessage(obj) {
+		if (typeof obj === "object" && obj.message) {
+			if(obj.command === "getOperatingHours"){
+				if(this.configedChannels[obj.message.name]){
+					const timestamp = Date.now();
+					const milliseconds = this.configedChannels[obj.message.name].operatingHours.milliseconds + (timestamp - this.configedChannels[obj.message.name].timestamp);
+					const seconds = milliseconds/1000;
+					const minutes = milliseconds/60000;
+					const hours = milliseconds/3600000;
+					const days = milliseconds/86400000;
+					const data = {messagestate: "ok", milliseconds: milliseconds, seconds: seconds, minutes:minutes, hours: hours, days: days};
+					this.sendTo(obj.from, obj.command, data, obj.callback);
+				}
+				else{
+					if(obj.callback){
+						const data = {messagestate: "error", errormessge: `no valid statename received: ${obj.message.name}`};
+						this.sendTo(obj.from, obj.command, data, obj.callback);
+					}
+				}
+			}
+			else{
+				if(obj.callback){
+					const data = {messagestate: "error", errormessge: `no valid command received: ${obj.command}`};
+					this.sendTo(obj.from, obj.command, data, obj.callback);
+				}
+			}
+		}
+	}
+
 }
 
 if (require.main !== module) {
