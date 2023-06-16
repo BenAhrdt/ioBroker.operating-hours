@@ -524,7 +524,11 @@ class OperatingHours extends utils.Adapter {
 		if (typeof obj === "object" && obj.message) {
 			if(obj.command === "getOperatingHours"){
 				if(this.configedChannels[obj.message.name]){
-					const timestamp = Date.now();
+					let timestamp = Date.now();
+					// If counting is disabled, dont add the time from the last timestamp till now
+					if(!this.configedChannels[obj.message.name].administrative.enableCounting){
+						timestamp = this.configedChannels[obj.message.name].timestamp;
+					}
 					const milliseconds = this.configedChannels[obj.message.name].operatingHours.milliseconds + (timestamp - this.configedChannels[obj.message.name].timestamp);
 					const seconds = milliseconds/1000;
 					const minutes = milliseconds/60000;
