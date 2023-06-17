@@ -530,27 +530,64 @@ class OperatingHours extends utils.Adapter {
 						timestamp = this.configedChannels[obj.message.name].timestamp;
 					}
 					const milliseconds = this.configedChannels[obj.message.name].operatingHours.milliseconds + (timestamp - this.configedChannels[obj.message.name].timestamp);
-					const seconds = milliseconds/1000;
-					const minutes = milliseconds/60000;
-					const hours = milliseconds/3600000;
-					const days = milliseconds/86400000;
-					const data = {messagestate: "ok", milliseconds: milliseconds, seconds: seconds, minutes:minutes, hours: hours, days: days};
+					const rawdata = this.generateRawdata(milliseconds);
+					const dissolved = this.dissoveRawdata(rawdata);
+					const data = {info: "operatinghours successfully transmitted", rawdata: rawdata, dissolved: dissolved};
 					this.sendTo(obj.from, obj.command, data, obj.callback);
 				}
 				else{
 					if(obj.callback){
-						const data = {messagestate: "error", errormessge: `no valid statename received: ${obj.message.name}`};
+						const data = {info: `no valid statename received: ${obj.message.name}`};
 						this.sendTo(obj.from, obj.command, data, obj.callback);
 					}
 				}
 			}
 			else{
 				if(obj.callback){
-					const data = {messagestate: "error", errormessge: `no valid command received: ${obj.command}`};
+					const data = {error: `no valid command received: ${obj.command}`};
 					this.sendTo(obj.from, obj.command, data, obj.callback);
 				}
 			}
 		}
+	}
+
+	generateRawdata(milliseconds){
+		return {milliseconds: milliseconds, seconds: milliseconds/1000, minutes: milliseconds/60000, hours: milliseconds/3600000, days: milliseconds/86400000};
+	}
+
+	dissoveRawdata(rawdata){
+		const dissolved = {};
+		let internalMillisecons = rawdata.milliseconds;
+		if(Math.trunc(rawdata.days) > 0){
+			internalMillisecons -= Math.trunc(rawdata.days) * 86400000;
+			dissolved.days = Math.trunc(rawdata.days);
+		}
+		else{
+			dissolved.days = 0;
+		}
+		if(Math.trunc(rawdata.hours%24) > 0){
+			internalMillisecons -= Math.trunc(rawdata.hours%24) * 3600000;
+			dissolved.hours = Math.trunc(rawdata.hours%24);
+		}
+		else{
+			dissolved.hours = 0;
+		}
+		if(Math.trunc(rawdata.minutes%60) > 0){
+			internalMillisecons -= Math.trunc(rawdata.minutes%60) * 60000;
+			dissolved.minutes = Math.trunc(rawdata.minutes%60);
+		}
+		else{
+			dissolved.minutes = 0;
+		}
+		if(Math.trunc(rawdata.seconds%60) > 0){
+			internalMillisecons -= Math.trunc(rawdata.seconds%60) * 1000;
+			dissolved.seconds = Math.trunc(rawdata.seconds%60);
+		}
+		else{
+			dissolved.seconds = 0;
+		}
+		dissolved.milliseconds = internalMillisecons;
+		return dissolved;
 	}
 
 }

@@ -19,6 +19,9 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (BenAhrdt) callback improoved for data and errormessage
+
 ### 1.0.2 (2023-06-16)
 * (BenAhrdt) messagfunction added: now its possible to read the current operationhour out by sendTo
 
