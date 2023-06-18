@@ -264,77 +264,46 @@ class OperatingHours extends utils.Adapter {
 
 	// Set operatinghours (all formats in case of the milliseconds)
 	setOperatingHours(channel,milliseconds,ts){
+		// Rohdaten erzeugen
+		const rawdata = this.generateRawdata(milliseconds);
 		// Berechenn der Werte
-		const seconds = milliseconds/1000;
-		const minutes = milliseconds/60000;
-		const hours = milliseconds/3600000;
-		const days = milliseconds/86400000;
+		// const seconds = milliseconds/1000;
+		// const minutes = milliseconds/60000;
+		// const hours = milliseconds/3600000;
+		// const days = milliseconds/86400000;
 
 		// Erzeugen der Strings mit Stunden
-		const hourlength = Math.trunc(hours).toString().length;
-		let hourstring = "00";
+		const hourlength = Math.trunc(rawdata.hours).toString().length;
 		let hourindex = 2;
-		for(hourindex; hourindex < hourlength; hourindex++){
-			hourstring += "0";
+		if(hourlength > 2){
+			hourindex = hourlength;
 		}
-		const h_m = (hourstring + Math.trunc(hours).toString()).slice(-hourindex) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2);
-		const h_m_s = h_m + ":" + ("00" + Math.trunc((seconds%60)).toString()).slice(-2);
+		const h_m = ("0" + Math.trunc(rawdata.hours).toString()).slice(-hourindex) + ":" + ("0" + Math.trunc((rawdata.minutes%60)).toString()).slice(-2);
+		const h_m_s = h_m + ":" + ("0" + Math.trunc((rawdata.seconds%60)).toString()).slice(-2);
 
 		// Erzeugen des String mit Tagen
-		const hourlengthWithDays = Math.trunc(hours%24).toString().length;
-		let hourstringWithDays = "00";
+		const hourlengthWithDays = Math.trunc(rawdata.hours%24).toString().length;
 		let hourindexWithDays = 2;
-		for(hourindexWithDays; hourindexWithDays < hourlengthWithDays; hourindexWithDays++){
-			hourstringWithDays += "0";
+		if(hourlengthWithDays > 2){
+			hourindexWithDays = hourlengthWithDays;
 		}
-		const h_mWithDays = (hourstringWithDays + Math.trunc(hours%24).toString()).slice(-hourindexWithDays) + ":" + ("00" + Math.trunc((minutes%60)).toString()).slice(-2);
-		const h_m_sWithDays = h_mWithDays + ":" + ("00" + Math.trunc((seconds%60)).toString()).slice(-2);
+		const h_mWithDays = ("0" + Math.trunc(rawdata.hours%24).toString()).slice(-hourindexWithDays) + ":" + ("0" + Math.trunc((rawdata.minutes%60)).toString()).slice(-2);
+		const h_m_sWithDays = h_mWithDays + ":" + ("00" + Math.trunc((rawdata.seconds%60)).toString()).slice(-2);
 
-		const daylength = Math.trunc(days).toString().length;
-		let daystring = "00";
+		const daylength = Math.trunc(rawdata.days).toString().length;
 		let dayindex = 2;
-		for(dayindex; dayindex < daylength; dayindex++){
-			daystring += "0";
+		if(daylength > 2){
+			dayindex = daylength;
 		}
-		const d_h_m_s = (daystring + Math.trunc(days).toString()).slice(-dayindex) + ":" + h_m_sWithDays;
+		const d_h_m_s = ("0" + Math.trunc(rawdata.days).toString()).slice(-dayindex) + ":" + h_m_sWithDays;
 
 		// Erzeugen des Json Objekts für den JSON-String
-		const json = {};
-		let internalMillisecons = milliseconds;
-		if(Math.trunc(days) > 0){
-			internalMillisecons -= Math.trunc(days) * 86400000;
-			json.days = Math.trunc(days);
-		}
-		else{
-			json.days = 0;
-		}
-		if(Math.trunc(hours%24) > 0){
-			internalMillisecons -= Math.trunc(hours%24) * 3600000;
-			json.hours = Math.trunc(hours%24);
-		}
-		else{
-			json.hours = 0;
-		}
-		if(Math.trunc(minutes%60) > 0){
-			internalMillisecons -= Math.trunc(minutes%60) * 60000;
-			json.minutes = Math.trunc(minutes%60);
-		}
-		else{
-			json.minutes = 0;
-		}
-		if(Math.trunc(seconds%60) > 0){
-			internalMillisecons -= Math.trunc(seconds%60) * 1000;
-			json.seconds = Math.trunc(seconds%60);
-		}
-		else{
-			json.seconds = 0;
-		}
-		json.milliseconds = internalMillisecons;
+		const json = this.dissoveRawdata(rawdata);
 
 		// Berechnen der mittleren Einschaltzeit
-		const averageOnTimeSeconds = seconds / this.configedChannels[channel].administrative.activationCounter;
-		const averageOnTimeMinutes = minutes / this.configedChannels[channel].administrative.activationCounter;
-		const averageOnTimeHours = hours / this.configedChannels[channel].administrative.activationCounter;
+		const averageOnTimeSeconds = rawdata.seconds / this.configedChannels[channel].administrative.activationCounter;
+		const averageOnTimeMinutes = rawdata.minutes / this.configedChannels[channel].administrative.activationCounter;
+		const averageOnTimeHours = rawdata.hours / this.configedChannels[channel].administrative.activationCounter;
 
 		// Erzeugen der Strings mit Stunden
 		const averagehourlength = Math.trunc(averageOnTimeHours).toString().length;
@@ -347,16 +316,16 @@ class OperatingHours extends utils.Adapter {
 
 		// Schreiben der states
 		this.configedChannels[channel].timestamp = ts;
-		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.milliseconds.name}`,milliseconds,true);
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.milliseconds.name}`, rawdata.milliseconds,true);
 		this.configedChannels[channel].operatingHours.milliseconds = milliseconds;
-		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.seconds.name}`,seconds,true);
-		this.configedChannels[channel].operatingHours.seconds = seconds;
-		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.minutes.name}`,minutes,true);
-		this.configedChannels[channel].operatingHours.minutes = minutes;
-		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.hours.name}`,hours,true);
-		this.configedChannels[channel].operatingHours.hours = hours;
-		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.days.name}`,days,true);
-		this.configedChannels[channel].operatingHours.days = days;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.seconds.name}`, rawdata.seconds,true);
+		this.configedChannels[channel].operatingHours.seconds = rawdata.seconds;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.minutes.name}`, rawdata.minutes,true);
+		this.configedChannels[channel].operatingHours.minutes = rawdata.minutes;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.hours.name}`, rawdata.hours,true);
+		this.configedChannels[channel].operatingHours.hours = rawdata.hours;
+		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.days.name}`, rawdata.days,true);
+		this.configedChannels[channel].operatingHours.days = rawdata.days;
 		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.timestring_h_m.name}`,h_m,true);
 		this.configedChannels[channel].operatingHours.timestring_h_m = h_m;
 		this.setState(`${channel}.${this.channelFolders.operatingHours}.${this.operatingHours.timestring_h_m_s.name}`,h_m_s,true);
@@ -524,6 +493,11 @@ class OperatingHours extends utils.Adapter {
 		if (typeof obj === "object" && obj.message) {
 			if(obj.command === "getOperatingHours"){
 				if(this.configedChannels[obj.message.name]){
+					// First get the "old" state-data (actual in state)
+					this.log.info(this.configedChannels[obj.message.name].operatingHours.milliseconds);
+					const oldRawdata = this.generateRawdata(this.configedChannels[obj.message.name].operatingHours.milliseconds);
+					const oldDissolved = this.dissoveRawdata(oldRawdata);
+					const oldState = {rawdata: oldRawdata, dissolved: oldDissolved};
 					let timestamp = Date.now();
 					// If counting is disabled, dont add the time from the last timestamp till now
 					if(!this.configedChannels[obj.message.name].administrative.enableCounting){
@@ -532,7 +506,8 @@ class OperatingHours extends utils.Adapter {
 					const milliseconds = this.configedChannels[obj.message.name].operatingHours.milliseconds + (timestamp - this.configedChannels[obj.message.name].timestamp);
 					const rawdata = this.generateRawdata(milliseconds);
 					const dissolved = this.dissoveRawdata(rawdata);
-					const data = {info: "operatinghours successfully transmitted", rawdata: rawdata, dissolved: dissolved};
+					const state = {rawdata: rawdata, dissolved: dissolved};
+					const data = {info: "operatinghours successfully transmitted", state: state, oldState: oldState};
 					this.sendTo(obj.from, obj.command, data, obj.callback);
 				}
 				else{
