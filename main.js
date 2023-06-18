@@ -494,7 +494,6 @@ class OperatingHours extends utils.Adapter {
 			if(obj.command === "getOperatingHours"){
 				if(this.configedChannels[obj.message.name]){
 					// First get the "old" state-data (actual in state)
-					this.log.info(this.configedChannels[obj.message.name].operatingHours.milliseconds);
 					const oldRawdata = this.generateRawdata(this.configedChannels[obj.message.name].operatingHours.milliseconds);
 					const oldDissolved = this.dissoveRawdata(oldRawdata);
 					const oldState = {rawdata: oldRawdata, dissolved: oldDissolved};
