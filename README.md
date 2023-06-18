@@ -19,7 +19,7 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 1.0.4 (2023-06-18)
 * (BenAhrdt) insert state and oldState in message
 
 ### 1.0.3 (2023-06-17)

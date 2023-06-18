@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "news": {
+      "1.0.4": {
+        "en": "insert state and oldState in message",
+        "de": "zustand einfügen und altState in Nachricht",
+        "ru": "вставить государство и староегосударство в сообщение",
+        "pt": "inserir estado e oldState na mensagem",
+        "nl": "instituut en ouderwets",
+        "fr": "insérer l'état et l'ancien état dans le message",
+        "it": "inserire stato e oldState nel messaggio",
+        "es": "insertar estado y estado viejo en el mensaje",
+        "pl": "wstawiony stan i stary stan wiadomości",
+        "uk": "вставити стан і старий",
+        "zh-cn": "插入信息国和老国"
+      },
       "1.0.3": {
         "en": "callback improoved for data and errormessage",
         "de": "callback improoviert für daten und fehlermeldung",
@@ -80,19 +93,6 @@
         "pl": "dodaje dni, dodatkowe struny i stany jsonów",
         "zh-cn": "增加日子、附加条件和礼拜州",
         "uk": "додавання станів днів, додаткового рядка та стану json"
-      },
-      "0.0.17": {
-        "en": "activation counter implemented to count the enable flags",
-        "de": "aktivierungszähler implementiert, um die freigabe-flags zu zählen",
-        "ru": "счетчик активации реализован для подсчета разрешительных флагов",
-        "pt": "contador de ativação implementado para contar as bandeiras de habilitação",
-        "nl": "activatie tegenhanger gevoerd om de bekwame vlaggen te tellen",
-        "fr": "compteur d'activation mis en œuvre pour compter les drapeaux",
-        "it": "contatore di attivazione implementato per contare le bandiere abilitanti",
-        "es": "contador de activación implementado para contar las banderas habilitantes",
-        "pl": "kontrowersja aktywacyjna zaimplementowała wyliczanie flag pozwalających na przeliczanie flag",
-        "zh-cn": "a. 实施的反击,以计算可能的船旗国",
-        "uk": "реалізований лічильник активації для підрахунку позначок увімкнення"
       }
     },
     "title": "Operating-Hours",
