@@ -56,8 +56,7 @@
                     "attr": "state",
                     "title": "states",
                     "filter": true,
-                    "sort": false,
-                    "allowAddByFilter": true
+                    "sort": false
                 },
                 {
                   "type": "cron",

@@ -20,6 +20,9 @@ To reset the counted operating hours just write one numeric state to 0.
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
+* (BenAhrdt) correction in jsonconfig schema
+
+### **WORK IN PROGRESS**
 * (BenAhrdt) insert type panel in json config (Schema issue)
 
 ### 1.0.4 (2023-06-18)
