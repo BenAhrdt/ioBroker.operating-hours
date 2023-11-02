@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "news": {
+      "1.0.5": {
+        "en": "correction in jsonconfig schema",
+        "de": "korrektur im jsonconfig schema",
+        "ru": "коррекция в jsonconfig schema",
+        "pt": "correção em jsonconfig schema",
+        "nl": "vertaling:",
+        "fr": "correction dans le schéma de jsonconfig",
+        "it": "correzione nello schema jsonconfig",
+        "es": "corrección en jsonconfig schema",
+        "pl": "poprawka w schemacie jsonconfig",
+        "uk": "корекція в jsonconfig schema",
+        "zh-cn": "更正"
+      },
       "1.0.4": {
         "en": "insert state and oldState in message",
         "de": "zustand einfügen und altState in Nachricht",
@@ -80,19 +93,6 @@
         "pl": "średnio w czasie oznacza to sygnalizację sygnalną: funkcjonującą w tym czasie. godzina i aktywacja kontrkandydat",
         "uk": "середній на час вказує рядок цей формулатор: операційний Час/активація Лічильник",
         "zh-cn": "平均时间表示这种形式:操作 Hour/启动 反对"
-      },
-      "0.0.18": {
-        "en": "adding days states, additional string and json state",
-        "de": "hinzufügen von tagen zuständen, zusätzlicher string und json zustand",
-        "ru": "добавление дней состояния, дополнительная строка и json состояние",
-        "pt": "adicionando estados de dias, string adicional e estado json",
-        "nl": "vertaling:",
-        "fr": "ajouter des états de jours, une chaîne supplémentaire et l'état de json",
-        "it": "aggiungere stati di giorni, stringa aggiuntiva e stato json",
-        "es": "añadir días estados, cadena adicional y estado json",
-        "pl": "dodaje dni, dodatkowe struny i stany jsonów",
-        "zh-cn": "增加日子、附加条件和礼拜州",
-        "uk": "додавання станів днів, додаткового рядка та стану json"
       }
     },
     "title": "Operating-Hours",
