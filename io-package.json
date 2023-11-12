@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "news": {
+      "1.0.6": {
+        "en": "insert check for node >= 16",
+        "de": "eingabeprüfung für knoten >= anhang",
+        "ru": "вставить проверку для ноды >= 16, 16, 16",
+        "pt": "insira a verificação do nó >= 16",
+        "nl": "insert check for node 16",
+        "fr": "insert check for node acia= 16",
+        "it": ">= 16",
+        "es": "comprobación de la inserción para nodo 16",
+        "pl": "śledztwo dla węzła >== 16",
+        "uk": "перевірка вставки для вузла >= 16 мар",
+        "zh-cn": "增 无减 16"
+      },
       "1.0.5": {
         "en": "correction in jsonconfig schema",
         "de": "korrektur im jsonconfig schema",
@@ -80,19 +93,6 @@
         "pl": "zależności od wersji 1",
         "uk": "залежності оновлено для версії 1.0.0 км",
         "zh-cn": "二. 更新后的承诺期 1.0%"
-      },
-      "0.0.19": {
-        "en": "average on time indicates a string this formular: operatingHour/activationCounter",
-        "de": "durchschnittlich auf der Zeit gibt einen String diesen Formelr an: Geruch/Aktivierung Anzahl",
-        "ru": "средний по времени указывает на строку эту формулу: работа Час/активация Счетчик",
-        "pt": "média no tempo indica uma string este formulador: operando Hour/ativação Contador",
-        "nl": "gemiddeld op tijd wijst op een string deze formulering: Hour/activatie Contra",
-        "fr": "moyenne sur le temps indique une chaîne de ce formuleur: fonctionnement Heure/activation Counter",
-        "it": "media in tempo indica una stringa questo formulare: operativo Orario/attivazione Contatore",
-        "es": "promedio en el tiempo indica una cadena este formulario: el funcionamiento Hora/activación Contrato",
-        "pl": "średnio w czasie oznacza to sygnalizację sygnalną: funkcjonującą w tym czasie. godzina i aktywacja kontrkandydat",
-        "uk": "середній на час вказує рядок цей формулатор: операційний Час/активація Лічильник",
-        "zh-cn": "平均时间表示这种形式:操作 Hour/启动 反对"
       }
     },
     "title": "Operating-Hours",
