@@ -19,6 +19,9 @@
     "type": "git",
     "url": "https://github.com/BenAhrdt/ioBroker.operating-hours"
   },
+  "engines": {
+    "node": ">= 16"
+  },
   "dependencies": {
     "@iobroker/adapter-core": "^3.0.4",
     "node-schedule": "^2.1.1"
