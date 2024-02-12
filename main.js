@@ -170,7 +170,7 @@ class OperatingHours extends utils.Adapter {
 			}
 
 			// Create operating hour states
-			for( const operatinghour of Object.values(this.operatingHours)){
+			for(const operatinghour of Object.values(this.operatingHours)){
 				await this.setObjectNotExistsAsync(`${channel}.${this.channelFolders.operatingHours}.${operatinghour.name}`,{
 					type: "state",
 					common: {
