@@ -19,6 +19,9 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (BenAhrdt) do changes for issue from check and sevice bot
+
 ### 1.0.6 (2023-11-12)
 * (BenAhrdt) insert check for node >= 16
 

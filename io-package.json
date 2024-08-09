@@ -95,7 +95,6 @@
         "zh-cn": "二. 更新后的承诺期 1.0%"
       }
     },
-    "title": "Operating-Hours",
     "titleLang": {
       "en": "Operating-Hours",
       "de": "Betriebsstunden",
@@ -126,6 +125,7 @@
       "BenAhrdt <bsahrdt@gmail.com>"
     ],
     "keywords": [
+      "ioBroker",
       "operating",
       "hours",
       "Betriebsstunden",
@@ -142,6 +142,7 @@
     "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.operating-hours/main/admin/operating-hours.png",
     "readme": "https://github.com/BenAhrdt/ioBroker.operating-hours/blob/main/README.md",
     "loglevel": "info",
+    "tier": 2,
     "mode": "daemon",
     "type": "metering",
     "compact": true,
