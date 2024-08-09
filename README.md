@@ -19,7 +19,7 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 1.0.7 (2024-08-09)
 * (BenAhrdt) do changes for issue from check and sevice bot
 
 ### 1.0.6 (2023-11-12)

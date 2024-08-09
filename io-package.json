@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "news": {
+      "1.0.7": {
+        "en": "do changes for issue from check and sevice bot",
+        "de": "änderungen an der ausgabe von check- und sevice-bot",
+        "ru": "делать изменения для выдачи от check and sevice bot",
+        "pt": "fazer alterações para o problema de verificação e sevice bot",
+        "nl": "wijzigen voor probleem van check en sevice bot",
+        "fr": "faire des changements pour l'émission de check et sevice bot",
+        "it": "fare modifiche per emissione da controllo e sevice bot",
+        "es": "hacer cambios para el problema de cheque y bot de sevice",
+        "pl": "zrobić zmiany dla wydania z check i sevice bot",
+        "uk": "внести зміни до питання з перевірки та sevice bot",
+        "zh-cn": "从检查和sevice bot 更改发行"
+      },
       "1.0.6": {
         "en": "insert check for node >= 16",
         "de": "eingabeprüfung für knoten >= anhang",
@@ -80,19 +93,6 @@
         "pl": "język niepotrzebny",
         "uk": "додана мова",
         "zh-cn": "地形语言增加了"
-      },
-      "1.0.0": {
-        "en": "dependencies updated for version 1.0.0",
-        "de": "abhängigkeiten aktualisiert für die version 1.0.0",
-        "ru": "зависимости обновлены для версии 1.0.0",
-        "pt": "dependências atualizadas para a versão 1.0.0",
-        "nl": "vertaling: 1.0",
-        "fr": "dépendances mises à jour pour la version 1.0.0",
-        "it": "dipendenze aggiornate per la versione 1.0.0",
-        "es": "dependencias actualizadas para la versión 1.0.0",
-        "pl": "zależności od wersji 1",
-        "uk": "залежності оновлено для версії 1.0.0 км",
-        "zh-cn": "二. 更新后的承诺期 1.0%"
       }
     },
     "titleLang": {
