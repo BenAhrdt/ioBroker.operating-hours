@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "news": {
+      "1.0.8": {
+        "en": "correct changes for issue from check and sevice bot",
+        "de": "korrekte änderungen bei der ausgabe von check und sepvice bot",
+        "ru": "правильные изменения для выдачи от check and sevice bot",
+        "pt": "alterações corretas para o problema de verificação e sevice bot",
+        "nl": "correcte wijzigingen voor probleem van controle en sevice bot",
+        "fr": "corrects changements pour l'émission de check et sevice bot",
+        "it": "modifiche corrette per emissione da controllo e sevice bot",
+        "es": "cambios correctos para el problema desde cheque y bot sevice",
+        "pl": "prawidłowe zmiany do wydania z check i sevice bot",
+        "uk": "виправлені зміни для випуску з перевірки та sevice bot",
+        "zh-cn": "校正检查和sevice boot 的更改"
+      },
       "1.0.7": {
         "en": "do changes for issue from check and sevice bot",
         "de": "änderungen an der ausgabe von check- und sevice-bot",
@@ -80,19 +93,6 @@
         "pl": "funkcja mesagresywna dodawała: teraz można odczytać bieżącą operację. Aby to zrobić",
         "uk": "javaScript licenses API Веб-сайт Go1.13.8 до",
         "zh-cn": "信袋功能增加:现在有可能通过发送来阅读目前业务小时。 导 言"
-      },
-      "1.0.1": {
-        "en": "unkrain language added",
-        "de": "unkrainische sprache hinzugefügt",
-        "ru": "unkrain язык добавлен",
-        "pt": "unkrain language adicionado",
-        "nl": "_",
-        "fr": "unkrain language added",
-        "it": "lingua unkrain aggiunto",
-        "es": "idioma unkrain añadido",
-        "pl": "język niepotrzebny",
-        "uk": "додана мова",
-        "zh-cn": "地形语言增加了"
       }
     },
     "titleLang": {
