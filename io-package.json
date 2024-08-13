@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.0.8",
+    "version": "1.1.0",
     "news": {
+      "1.1.0": {
+        "en": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\n  Check your System before installing new Version",
+        "de": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\nÜberprüfen Sie Ihr System vor der Installation neuer Version",
+        "ru": "* Зависимость обновления: \"Js-controller\": \">=5.0.19\"\nПроверьте свою систему перед установкой новой версии",
+        "pt": "* Dependências de atualização: \"js-controller\": \">=5.0.19\"\nVerifique o seu sistema antes de instalar nova versão",
+        "nl": "* Update afhankelijkheden: \"js-controller\": \">=5.0.19\"\nControleer uw systeem voordat u nieuwe versie installeert",
+        "fr": "* Mise à jour des dépendances : \"js-controller\" : \">=5.0.19\"\nVérifiez votre système avant d'installer une nouvelle version",
+        "it": "* Dipendenze di aggiornamento: \"js-controller\": \">=5.0.19\"\nControlla il tuo sistema prima di installare una nuova versione",
+        "es": "* Actualizar Dependencias: \"js-controller\": \"Inglés=5.0.19\"\nCompruebe su sistema antes de instalar nueva versión",
+        "pl": "* Update Dependences: \"js- controller\": \"> = 5.0.19\"\nSprawdź system przed zainstalowaniem nowej wersji",
+        "uk": "* Оновлення залежностей: \"js-controller\": \">=5.0.19\"\nПеревірити систему до встановлення нової версії",
+        "zh-cn": "* 更新属:\"js-controller\":\">=5.0.19\"\n在安装新版本前检查您的系统"
+      },
       "1.0.8": {
         "en": "correct changes for issue from check and sevice bot",
         "de": "korrekte änderungen bei der ausgabe von check und sepvice bot",
@@ -80,19 +93,6 @@
         "pl": "zanieczyszczenie informacji i błędów",
         "uk": "зворотній зв'язок для даних та помилок",
         "zh-cn": "对数据和错误主题的呼吁"
-      },
-      "1.0.2": {
-        "en": "messagfunction added: now its possible to read the current operationhour out by sendTo",
-        "de": "messagfunction fügte hinzu: jetzt ist es möglich, die aktuelle Betriebsstunde durch Senden zu lesen Zu",
-        "ru": "messagfunction добавил: теперь его можно прочитать текущий часы работы по электронной почте В",
-        "pt": "messagfunction adicionado: agora é possível ler a operação atualhora fora por enviar Para",
-        "nl": "vertaling: ♪",
-        "fr": "messagfonction ajouté: maintenant son possible de lire l'heure de fonctionnement actuelle en envoyer To",
-        "it": "messagfunzione aggiunta: ora è possibile leggere l'attuale operazioneora fuori inviando A",
-        "es": "messagfunction añadido: ahora es posible leer la hora actual de operación por enviar A",
-        "pl": "funkcja mesagresywna dodawała: teraz można odczytać bieżącą operację. Aby to zrobić",
-        "uk": "javaScript licenses API Веб-сайт Go1.13.8 до",
-        "zh-cn": "信袋功能增加:现在有可能通过发送来阅读目前业务小时。 导 言"
       }
     },
     "titleLang": {
