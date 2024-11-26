@@ -6,21 +6,33 @@
             "newLine": true,
             "type": "header",
             "text": "mainInformations",
+            "size": 3,
+            "xs": 12,
             "sm": 12,
-            "size": 3
+            "md": 12,
+            "lg": 12,
+            "xl": 12
         },
         "Information1":{
             "newLine":true,
             "type": "staticText",
             "label": "mainInformationText",
-            "sm": 6
+            "xs": 12,
+            "sm": 6,
+            "md": 6,
+            "lg": 6,
+            "xl": 6
         },
         "configurationHeader": {
             "newLine": true,
             "type": "header",
             "text": "configuration",
+            "size": 3,
+            "xs": 12,
             "sm": 12,
-            "size": 3
+            "md": 12,
+            "lg": 12,
+            "xl": 12
         },
         "refreshRate": {
             "newLine": true,
@@ -44,11 +56,14 @@
               "default": 6000,
             "label": "refreshRate",
             "tooltip": "refreshRateTooltip",
-            "sm": 1
+            "xs": 12,
+            "sm": 1,
+            "md": 1,
+            "lg": 1,
+            "xl": 1
         },
         "statesTable":{
             "type":"table",
-            "sm":12,
             "allowAddByFilter": true,
             "items":[
                 {
@@ -65,7 +80,12 @@
                   "label": "automaticReset",
                   "tooltip": "automaticResetTooltip"
                 }
-            ]
+            ],
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12
         }
     }
  }

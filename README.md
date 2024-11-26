@@ -19,6 +19,9 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (BenAhrdt) Changed Schema and responsive tags
+
 ### 1.1.0 (2024-08-13)
 * (BenAhrdt) Update Dependencies: "js-controller": ">=5.0.19"
   Check your System before installing new Version
