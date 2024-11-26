@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "news": {
+      "1.1.1": {
+        "en": "Changed Schema and responsive tags",
+        "de": "Änderte Schema- und responsive Tags",
+        "ru": "Изменение схомы и отзывчивые теги",
+        "pt": "Esquema alterado e tags responsivas",
+        "nl": "Veranderde schema en responsieve tags",
+        "fr": "Schéma modifié et balises réactives",
+        "it": "Cambiato schema e tag responsive",
+        "es": "Cambio de esquema y etiquetas sensibles",
+        "pl": "Zmieniony Schema i odpowiedzi tagi",
+        "uk": "Змінені мітки Schema і чуйні теги",
+        "zh-cn": "更改 Schema 和响应标记"
+      },
       "1.1.0": {
         "en": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\n  Check your System before installing new Version",
         "de": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\nÜberprüfen Sie Ihr System vor der Installation neuer Version",
@@ -80,19 +93,6 @@
         "pl": "wstawiony stan i stary stan wiadomości",
         "uk": "вставити стан і старий",
         "zh-cn": "插入信息国和老国"
-      },
-      "1.0.3": {
-        "en": "callback improoved for data and errormessage",
-        "de": "callback improoviert für daten und fehlermeldung",
-        "ru": "callback неповеден для данных и errormessage",
-        "pt": "callback improoved para dados e erromessage",
-        "nl": "vertaling:",
-        "fr": "callback improoved for data and errormessage",
-        "it": "callback improoved per i dati e il messaggio di errore",
-        "es": "callback improvisado para datos y errores",
-        "pl": "zanieczyszczenie informacji i błędów",
-        "uk": "зворотній зв'язок для даних та помилок",
-        "zh-cn": "对数据和错误主题的呼吁"
       }
     },
     "titleLang": {
