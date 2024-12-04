@@ -52,11 +52,11 @@ class OperatingHours extends utils.Adapter {
             averageOnTime_h_m_s: { name: 'averageOnTime_h_m_s', type: 'string', write: false, unit: 'h:m:s', def: '' },
         };
         this.administrative = {
-            enableCounting: {name: 'enableCounting', type: 'boolean', write: true, def: false },
-            activationCounter: {name: 'activationCounter', type: 'number', write: false, def: 0 },
+            enableCounting: { name: 'enableCounting', type: 'boolean', write: true, def: false },
+            activationCounter: { name: 'activationCounter', type: 'number', write: false, def: 0 },
         };
 
-        this.timeouts = {}; 
+        this.timeouts = {};
         this.timeoutIds = {
             countingTimeout: 'countingTimeout',
         };
@@ -168,7 +168,6 @@ class OperatingHours extends utils.Adapter {
                 this.configedChannels[channel][this.channelFolders.operatingHours] = {};
             }
 
-            /** @type {ioBroker.CommonType} */
             // Create operating hour states
             for (const operatinghour of Object.values(this.operatingHours)) {
                 await this.setObjectNotExistsAsync(
