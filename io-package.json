@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "news": {
+      "1.2.0": {
+        "en": "update eslint",
+        "de": "update eslint",
+        "ru": "обновление eslint",
+        "pt": "atualização eslint",
+        "nl": "eslint bijwerken",
+        "fr": "mettre à jour eslint",
+        "it": "aggiornamento eslint",
+        "es": "update eslint",
+        "pl": "update eslint",
+        "uk": "оновлення eslint",
+        "zh-cn": "更新埃斯林特"
+      },
       "1.1.1": {
         "en": "Changed Schema and responsive tags",
         "de": "Änderte Schema- und responsive Tags",
@@ -80,19 +93,6 @@
         "pl": "poprawka w schemacie jsonconfig",
         "uk": "корекція в jsonconfig schema",
         "zh-cn": "更正"
-      },
-      "1.0.4": {
-        "en": "insert state and oldState in message",
-        "de": "zustand einfügen und altState in Nachricht",
-        "ru": "вставить государство и староегосударство в сообщение",
-        "pt": "inserir estado e oldState na mensagem",
-        "nl": "instituut en ouderwets",
-        "fr": "insérer l'état et l'ancien état dans le message",
-        "it": "inserire stato e oldState nel messaggio",
-        "es": "insertar estado y estado viejo en el mensaje",
-        "pl": "wstawiony stan i stary stan wiadomości",
-        "uk": "вставити стан і старий",
-        "zh-cn": "插入信息国和老国"
       }
     },
     "titleLang": {
