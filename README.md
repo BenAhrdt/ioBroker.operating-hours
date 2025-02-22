@@ -20,7 +20,7 @@ To reset the counted operating hours just write one numeric state to 0.
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-* (BenAhrdt) update copyright
+* (BenAhrdt) update copyright and dependencies
 
 ### 1.2.0 (2024-12-04)
 * (BenAhrdt) update eslint
