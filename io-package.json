@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "news": {
+      "1.3.0": {
+        "en": "update copyright and dependencies",
+        "de": "urheberrechte und abhängigkeiten aktualisieren",
+        "ru": "обновление авторских прав и зависимостей",
+        "pt": "atualizar direitos autorais e dependências",
+        "nl": "copyright en afhankelijkheden bijwerken",
+        "fr": "mettre à jour le droit d'auteur et les dépendances",
+        "it": "aggiornare il copyright e le dipendenze",
+        "es": "actualizar los derechos de autor y las dependencias",
+        "pl": "aktualizacja praw autorskich i zależności",
+        "uk": "оновлення авторських прав і залежностей",
+        "zh-cn": "更新版权和附属关系"
+      },
       "1.2.0": {
         "en": "update eslint",
         "de": "update eslint",
@@ -80,19 +93,6 @@
         "pl": "śledztwo dla węzła >== 16",
         "uk": "перевірка вставки для вузла >= 16 мар",
         "zh-cn": "增 无减 16"
-      },
-      "1.0.5": {
-        "en": "correction in jsonconfig schema",
-        "de": "korrektur im jsonconfig schema",
-        "ru": "коррекция в jsonconfig schema",
-        "pt": "correção em jsonconfig schema",
-        "nl": "vertaling:",
-        "fr": "correction dans le schéma de jsonconfig",
-        "it": "correzione nello schema jsonconfig",
-        "es": "corrección en jsonconfig schema",
-        "pl": "poprawka w schemacie jsonconfig",
-        "uk": "корекція в jsonconfig schema",
-        "zh-cn": "更正"
       }
     },
     "titleLang": {
