@@ -21,6 +21,7 @@ To reset the counted operating hours just write one numeric state to 0.
 -->
 ### **WORK IN PROGRESS**
 * (BenAhrdt) update dependencie to node >= 20
+* (BenAhrdt) update testing to 24.x
 
 ### 1.3.0 (2025-02-22)
 * (BenAhrdt) update copyright and dependencies
