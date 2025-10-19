@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "news": {
+      "1.4.0": {
+        "en": "update Authentication NPM\nupdate dependencie for eslint\nupdate dependencie core\nupdate dependencie to node >= 20\nupdate testing to 24.x",
+        "de": "update Authentication NPM\nupdate abhängigencier für eslint\naktualisierung abhängiger kern\nupdate abhängigencier to node >= 20\nupdate-tests auf 24.x",
+        "ru": "обновление Authentication NPM\nобновление dependencie для eslint\nобновление dependencie core\nобновление зависимых узлов >= 20\nтестирование обновлений до 24.x",
+        "pt": "atualizar a autenticação NPM\nupdate dependencie for eslint\natualizar o núcleo dependente\natualização dependente para nó >= 20\natualização de testes para 24.x",
+        "nl": "authenticatie NPM bijwerken\nupdate afhankelijk voor eslint\nupdate afhankelijke kern\nupdate afhankelijk van knooppunt 20\nupdate testen naar 24.x",
+        "fr": "mettre à jour Authentification NPM\nmettre à jour dependencie pour eslint\nmise à jour du noyau de dependencie\nmettre à jour dependencie to node >= 20\nmettre à jour les tests à 24.x",
+        "it": "aggiornamento Autenticazione NPM\naggiornamento indipendenza per eslint\naggiornamento indipendenza core\naggiornamento della dipendenza dal nodo 20\naggiornamento test a 24.x",
+        "es": "actualización de la autenticación NPM\nactualización de la dependencia de eslint\nactualización de los recursos básicos\nactualización dependecie de nodo √= 20\npruebas de actualización a 24.x",
+        "pl": "aktualizacja Uwierzytelnianie NPM\nupdate dependencie for eslint\nupdate dependencie core\naktualizacja zależnego do węzła > = 20\naktualizacja testów do 24.x",
+        "uk": "оновлення аутентифікації NPM\nоновлення залежності для eslint\nоновлення значення залежностей\nоновлення залежності до вершини >= 20 хв\nтестування оновлення до 24.x",
+        "zh-cn": "更新认证国家预防机制\n更新 eslint 的依赖性\n更新依赖核心\n更新依赖到节点qq 20 (简体中文)\n更新测试为 24.x"
+      },
       "1.3.0": {
         "en": "update copyright and dependencies",
         "de": "urheberrechte und abhängigkeiten aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "zrobić zmiany dla wydania z check i sevice bot",
         "uk": "внести зміни до питання з перевірки та sevice bot",
         "zh-cn": "从检查和sevice bot 更改发行"
-      },
-      "1.0.6": {
-        "en": "insert check for node >= 16",
-        "de": "eingabeprüfung für knoten >= anhang",
-        "ru": "вставить проверку для ноды >= 16, 16, 16",
-        "pt": "insira a verificação do nó >= 16",
-        "nl": "insert check for node 16",
-        "fr": "insert check for node acia= 16",
-        "it": ">= 16",
-        "es": "comprobación de la inserción para nodo 16",
-        "pl": "śledztwo dla węzła >== 16",
-        "uk": "перевірка вставки для вузла >= 16 мар",
-        "zh-cn": "增 无减 16"
       }
     },
     "titleLang": {
