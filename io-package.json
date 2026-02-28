@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "news": {
+      "1.4.1": {
+        "en": "update depedencies",
+        "de": "depedanzen aktualisieren",
+        "ru": "обновление недостатков",
+        "pt": "atualizar depedências",
+        "nl": "de depots bijwerken",
+        "fr": "mettre à jour les procédures",
+        "it": "aggiornamento depedens",
+        "es": "actualización de los casos",
+        "pl": "aktualizacja depedencji",
+        "uk": "оновлення депедацій",
+        "zh-cn": "更新专长"
+      },
       "1.4.0": {
         "en": "update Authentication NPM\nupdate dependencie for eslint\nupdate dependencie core\nupdate dependencie to node >= 20\nupdate testing to 24.x",
         "de": "update Authentication NPM\nupdate abhängigencier für eslint\naktualisierung abhängiger kern\nupdate abhängigencier to node >= 20\nupdate-tests auf 24.x",
@@ -80,19 +93,6 @@
         "pl": "prawidłowe zmiany do wydania z check i sevice bot",
         "uk": "виправлені зміни для випуску з перевірки та sevice bot",
         "zh-cn": "校正检查和sevice boot 的更改"
-      },
-      "1.0.7": {
-        "en": "do changes for issue from check and sevice bot",
-        "de": "änderungen an der ausgabe von check- und sevice-bot",
-        "ru": "делать изменения для выдачи от check and sevice bot",
-        "pt": "fazer alterações para o problema de verificação e sevice bot",
-        "nl": "wijzigen voor probleem van check en sevice bot",
-        "fr": "faire des changements pour l'émission de check et sevice bot",
-        "it": "fare modifiche per emissione da controllo e sevice bot",
-        "es": "hacer cambios para el problema de cheque y bot de sevice",
-        "pl": "zrobić zmiany dla wydania z check i sevice bot",
-        "uk": "внести зміни до питання з перевірки та sevice bot",
-        "zh-cn": "从检查和sevice bot 更改发行"
       }
     },
     "titleLang": {
