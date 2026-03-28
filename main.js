@@ -10,7 +10,7 @@ const utils = require('@iobroker/adapter-core');
 const schedule = require('node-schedule');
 
 // Load your modules here, e.g.:
-// const fs = require("fs");
+// const fs = require("node:fs");
 
 class OperatingHours extends utils.Adapter {
     /**
