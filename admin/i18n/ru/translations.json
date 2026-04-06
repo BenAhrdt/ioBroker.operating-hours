@@ -1,11 +1,17 @@
 {
-    "operating-hours adapter settings": "Настройки адаптера для рабочих часов",
-    "states": "состояния",
-    "mainInformations": "основная информация",
-    "mainInformationText": "Для измерения часов работы не требуются внешние состояния. ",
-    "configuration": "конфигурация",
-    "refreshRate": "Частота обновления",
-    "refreshRateTooltip": "здесь вы можете установить частоту обновления, с которой должны обновляться часы работы",
-    "automaticReset": "автоматический сброс",
-    "automaticResetTooltip": "вставьте желаемый cronJob, который автоматически сбрасывает часы работы."
+	"DeviceObject": "Объект устройства",
+	"administative": "административный",
+	"administrative": "административный",
+	"automaticReset": "автоматический сброс",
+	"automaticResetTooltip": "вставьте желаемый cronJob, который автоматически сбрасывает часы работы.",
+	"configuration": "конфигурация",
+	"deviceObject": "Объект устройства",
+	"mainInformationText": "Для измерения часов работы не требуются внешние состояния. ",
+	"mainInformations": "основная информация",
+	"operating-hours adapter settings": "Настройки адаптера для рабочих часов",
+	"operatingHours": "Рабочие часы",
+	"refreshRate": "Частота обновления",
+	"refreshRateTooltip": "здесь вы можете установить частоту обновления, с которой должны обновляться часы работы",
+	"states": "состояния",
+	"valueStates": "фактические значения"
 }

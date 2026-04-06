@@ -148,8 +148,20 @@
     "connectionType": "local",
     "messagebox": true,
     "dataSource": "push",
+    "supportedMessages": {
+      "deviceManager": true
+    },
     "adminUI": {
-      "config": "json"
+      "config": "json",
+      "tab": "json"
+    },
+    "adminTab": {
+      "link": "jsonTab.json",
+      "singleton": false,
+      "name": {
+        "en": "Operation-Hour",
+        "de": "Betriebsstunden"
+      }
     },
     "globalDependencies": [
       {

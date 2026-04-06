@@ -7,5 +7,10 @@
 	"refreshRate": "refresh rate",
 	"refreshRateTooltip": "here you can set the refresh rate, with which the operating hours should be updated",
     "automaticReset": "automatic reset",
-    "automaticResetTooltip": "inset the desired cronJob, wich resets automaticaly the operatinghours."
+    "automaticResetTooltip": "inset the desired cronJob, wich resets automaticaly the operatinghours.",
+	"valueStates": "actual values",
+	"administrative": "administrative",
+	"operatingHours": "perating Hours",
+	"deviceObject": "Device Object",
+	"DeviceObject": "Device Object"
 }

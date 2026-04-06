@@ -8,6 +8,8 @@
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
 const schedule = require('node-schedule');
+const objectStoreClass = require('./lib/modules/objectStore');
+const OperatingHourDeviceManagement = require('./lib/modules/deviceManager/deviceManager');
 
 // Load your modules here, e.g.:
 // const fs = require("node:fs");
@@ -23,7 +25,7 @@ class OperatingHours extends utils.Adapter {
         });
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
-        // this.on("objectChange", this.onObjectChange.bind(this));
+        this.on('objectChange', this.onObjectChange.bind(this));
         this.on('message', this.onMessage.bind(this));
         this.on('unload', this.onUnload.bind(this));
 
@@ -98,8 +100,15 @@ class OperatingHours extends utils.Adapter {
         // Create configured states if not created
         await this.createInternalStates();
 
-        // Subscribe all internal states
+        // Subscribe
+        this.subscribeObjects('*');
         this.subscribeStates('*');
+
+        // Generate Object Store
+        this.objectStore = new objectStoreClass(this);
+        await this.objectStore.generateStoreObjects();
+        // Device Manager
+        this.deviceManagement = new OperatingHourDeviceManagement(this);
 
         // countup the enabled channels
         this.counting();
@@ -172,6 +181,8 @@ class OperatingHours extends utils.Adapter {
             for (const operatinghour of Object.values(this.operatingHours)) {
                 await this.setObjectNotExistsAsync(
                     `${channel}.${this.channelFolders.operatingHours}.${operatinghour.name}`,
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-expect-error
                     {
                         type: 'state',
                         common: {
@@ -214,6 +225,8 @@ class OperatingHours extends utils.Adapter {
             for (const administrative of Object.values(this.administrative)) {
                 await this.setObjectNotExistsAsync(
                     `${channel}.${this.channelFolders.administrative}.${administrative.name}`,
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-expect-error
                     {
                         type: 'state',
                         common: {
@@ -464,14 +477,31 @@ class OperatingHours extends utils.Adapter {
         }
     }
 
+    async onObjectChange(id, obj) {
+        if (obj) {
+            try {
+                // Internal ObjectStore
+                if (id.startsWith(this.objectStore?.startCondition)) {
+                    await this.objectStore?.updateDeviceObject(id, { payload: { object: obj } });
+                }
+            } catch (error) {
+                this.log.error(error);
+            }
+        }
+    }
+
     /**
      * Is called if a subscribed state changes
      *
      * @param id id of the changed state
      * @param state state (val & ack) of the changed state-id
      */
-    onStateChange(id, state) {
+    async onStateChange(id, state) {
         if (state) {
+            // Internal ObjectStore
+            if (id.startsWith(this.objectStore?.startCondition)) {
+                await this.objectStore?.updateDeviceObject(id, { payload: { state: state } });
+            }
             // Es werden nur Werte beachtet, welche mit ack = false geschrieben wurden.
             if (!state.ack) {
                 let newId = id.substring(this.namespace.length, id.length);
@@ -569,6 +599,10 @@ class OperatingHours extends utils.Adapter {
     //  * @param {ioBroker.Message} obj
     //  */
     onMessage(obj) {
+        if (obj.command?.startsWith('dm:')) {
+            // Handled by Device Manager class itself, so ignored here
+            return;
+        }
         if (typeof obj === 'object' && obj.message) {
             if (obj.command === 'getOperatingHours') {
                 if (this.configedChannels[obj.message.name]) {

@@ -1,11 +1,17 @@
 {
-    "operating-hours adapter settings": "Ustawienia adaptera dla godzin pracy",
-    "states": "stany",
-    "mainInformations": "główne informacje",
-    "mainInformationText": "Do pomiaru godzin pracy nie są wymagane żadne stany zewnętrzne. ",
-    "configuration": "konfiguracja",
-    "refreshRate": "częstotliwość odświeżania",
-    "refreshRateTooltip": "tutaj możesz ustawić częstotliwość odświeżania, z jaką powinny być aktualizowane godziny pracy",
-    "automaticReset": "automatyczny reset",
-    "automaticResetTooltip": "wstaw żądany cronJob, który automatycznie zresetuje godziny pracy."
+	"DeviceObject": "Obiekt urządzenia",
+	"administative": "administracyjny",
+	"administrative": "administracyjny",
+	"automaticReset": "automatyczny reset",
+	"automaticResetTooltip": "wstaw żądany cronJob, który automatycznie zresetuje godziny pracy.",
+	"configuration": "konfiguracja",
+	"deviceObject": "Obiekt urządzenia",
+	"mainInformationText": "Do pomiaru godzin pracy nie są wymagane żadne stany zewnętrzne. ",
+	"mainInformations": "główne informacje",
+	"operating-hours adapter settings": "Ustawienia adaptera dla godzin pracy",
+	"operatingHours": "Godziny pracy",
+	"refreshRate": "częstotliwość odświeżania",
+	"refreshRateTooltip": "tutaj możesz ustawić częstotliwość odświeżania, z jaką powinny być aktualizowane godziny pracy",
+	"states": "stany",
+	"valueStates": "rzeczywiste wartości"
 }

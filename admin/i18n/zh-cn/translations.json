@@ -1,11 +1,17 @@
 {
-    "operating-hours adapter settings": "工作时间的适配器设置",
-    "states": "状态",
-    "mainInformations": "主要信息",
-    "mainInformationText": "测量运行时间不需要外部状态。",
-    "configuration": "配置",
-    "refreshRate": "刷新率",
-    "refreshRateTooltip": "您可以在此处设置刷新率，使用该刷新率更新工作时间",
-    "automaticReset": "自动复位",
-    "automaticResetTooltip": "插入所需的 cronJob，它会自动重置操作时间。"
+	"DeviceObject": "设备对象",
+	"administative": "行政",
+	"administrative": "行政",
+	"automaticReset": "自动复位",
+	"automaticResetTooltip": "插入所需的 cronJob，它会自动重置操作时间。",
+	"configuration": "配置",
+	"deviceObject": "设备对象",
+	"mainInformationText": "测量运行时间不需要外部状态。",
+	"mainInformations": "主要信息",
+	"operating-hours adapter settings": "工作时间的适配器设置",
+	"operatingHours": "营业时间",
+	"refreshRate": "刷新率",
+	"refreshRateTooltip": "您可以在此处设置刷新率，使用该刷新率更新工作时间",
+	"states": "状态",
+	"valueStates": "实际值"
 }

@@ -1,0 +1,34 @@
+{
+	"i18n": true,
+	"type": "tabs",
+	"tabsStyle": {
+		"width": "calc(100% - 100px)"
+	},
+	"items":{
+		"_deviceManager": {
+			"type": "panel",
+			"label": "devices",
+			"items": {
+				"_dm": {
+					"type": "deviceManager",
+					"sm": 12,
+					"style": {
+						"width": "100%",
+						"height": "100%",
+						"overflow": "hidden"
+					}
+				}
+			},
+			"style": {
+				"width": "100%",
+				"height": "100%",
+				"overflow": "hidden"
+			},
+			"innerStyle": {
+				"width": "100%",
+				"height": "100%",
+				"overflow": "hidden"
+			}
+		}
+    }
+}

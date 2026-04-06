@@ -1,11 +1,17 @@
 {
-    "operating-hours adapter settings": "Ajustes del adaptador para las horas de funcionamiento",
-    "states": "estados",
-    "mainInformations": "informaciones principales",
-    "mainInformationText": "No se requieren estados externos para medir las horas de funcionamiento. ",
-    "configuration": "configuración",
-    "refreshRate": "frecuencia de actualización",
-    "refreshRateTooltip": "aquí puede configurar la frecuencia de actualización, con la que se deben actualizar las horas de funcionamiento",
-    "automaticReset": "reinicio automático",
-    "automaticResetTooltip": "inserte el cronJob deseado, que restablece automáticamente las horas de funcionamiento."
+	"DeviceObject": "Objeto de dispositivo",
+	"administative": "administrativo",
+	"administrative": "administrativo",
+	"automaticReset": "reinicio automático",
+	"automaticResetTooltip": "inserte el cronJob deseado, que restablece automáticamente las horas de funcionamiento.",
+	"configuration": "configuración",
+	"deviceObject": "Objeto de dispositivo",
+	"mainInformationText": "No se requieren estados externos para medir las horas de funcionamiento. ",
+	"mainInformations": "informaciones principales",
+	"operating-hours adapter settings": "Ajustes del adaptador para las horas de funcionamiento",
+	"operatingHours": "Horas de funcionamiento",
+	"refreshRate": "frecuencia de actualización",
+	"refreshRateTooltip": "aquí puede configurar la frecuencia de actualización, con la que se deben actualizar las horas de funcionamiento",
+	"states": "estados",
+	"valueStates": "valores reales"
 }
