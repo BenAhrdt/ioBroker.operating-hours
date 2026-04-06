@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.5.0",
+    "version": "1.5.1",
     "news": {
+      "1.5.1": {
+        "en": "remove debug logging",
+        "de": "debug protokoll entfernen",
+        "ru": "удаление отладочных рубок",
+        "pt": "remover registro de depuração",
+        "nl": "debug-logboek verwijderen",
+        "fr": "supprimer l'enregistrement de débogage",
+        "it": "rimuovere debug logging",
+        "es": "remove debug logging",
+        "pl": "usuń logowanie debugowania",
+        "uk": "видалити дебюг карбування",
+        "zh-cn": "删除调试日志"
+      },
       "1.5.0": {
         "en": "implement device Manager (Admin 7.8.20 required)",
         "de": "gerätemanager implementieren (Admin 7.8.20 erforderlich)",
@@ -80,19 +93,6 @@
         "pl": "Zmieniony Schema i odpowiedzi tagi",
         "uk": "Змінені мітки Schema і чуйні теги",
         "zh-cn": "更改 Schema 和响应标记"
-      },
-      "1.1.0": {
-        "en": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\n  Check your System before installing new Version",
-        "de": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\nÜberprüfen Sie Ihr System vor der Installation neuer Version",
-        "ru": "* Зависимость обновления: \"Js-controller\": \">=5.0.19\"\nПроверьте свою систему перед установкой новой версии",
-        "pt": "* Dependências de atualização: \"js-controller\": \">=5.0.19\"\nVerifique o seu sistema antes de instalar nova versão",
-        "nl": "* Update afhankelijkheden: \"js-controller\": \">=5.0.19\"\nControleer uw systeem voordat u nieuwe versie installeert",
-        "fr": "* Mise à jour des dépendances : \"js-controller\" : \">=5.0.19\"\nVérifiez votre système avant d'installer une nouvelle version",
-        "it": "* Dipendenze di aggiornamento: \"js-controller\": \">=5.0.19\"\nControlla il tuo sistema prima di installare una nuova versione",
-        "es": "* Actualizar Dependencias: \"js-controller\": \"Inglés=5.0.19\"\nCompruebe su sistema antes de instalar nueva versión",
-        "pl": "* Update Dependences: \"js- controller\": \"> = 5.0.19\"\nSprawdź system przed zainstalowaniem nowej wersji",
-        "uk": "* Оновлення залежностей: \"js-controller\": \">=5.0.19\"\nПеревірити систему до встановлення нової версії",
-        "zh-cn": "* 更新属:\"js-controller\":\">=5.0.19\"\n在安装新版本前检查您的系统"
       }
     },
     "titleLang": {
