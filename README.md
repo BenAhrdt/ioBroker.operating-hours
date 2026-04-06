@@ -19,6 +19,9 @@ To reset the counted operating hours just write one numeric state to 0.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (BenAhrdt) remove debug logging
+
 ### 1.5.0 (2026-04-06)
 * (BenAhrdt) implement device Manager (Admin 7.8.20 required)
 
