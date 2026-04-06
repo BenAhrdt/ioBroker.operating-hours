@@ -10,6 +10,7 @@
 		"checkJs": true,
 
 		"module": "commonjs",
+		"ignoreDeprecations": "6.0",
 		"moduleResolution": "node",
 		"esModuleInterop": true,
 		// this is necessary for the automatic typing of the adapter config
