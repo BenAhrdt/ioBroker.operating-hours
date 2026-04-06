@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "operating-hours",
-    "version": "1.4.1",
+    "version": "1.5.0",
     "news": {
+      "1.5.0": {
+        "en": "implement device Manager (Admin 7.8.20 required)",
+        "de": "gerätemanager implementieren (Admin 7.8.20 erforderlich)",
+        "ru": "диспетчер устройств (требуется админ 7.8.20)",
+        "pt": "implementar o gerenciador de dispositivos (obrigatório o Admin 7.8.20)",
+        "nl": "device Manager implementeren (Admin 7.8.20. vereist)",
+        "fr": "implement device Manager (Admin 7.8.20 requis)",
+        "it": "implementare il dispositivo Manager (Admin 7.8.20 richiesto)",
+        "es": "implement device Manager (Admin 7.8.20 required)",
+        "pl": "menedżer urządzeń implementacyjnych (wymagany admin 7.8.20)",
+        "uk": "реалізація диспетчера пристроїв (Admin 7.8.20 потрібно)",
+        "zh-cn": "执行设备管理器(需要admin 7.8.20)"
+      },
       "1.4.1": {
         "en": "update depedencies",
         "de": "depedanzen aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "* Update Dependences: \"js- controller\": \"> = 5.0.19\"\nSprawdź system przed zainstalowaniem nowej wersji",
         "uk": "* Оновлення залежностей: \"js-controller\": \">=5.0.19\"\nПеревірити систему до встановлення нової версії",
         "zh-cn": "* 更新属:\"js-controller\":\">=5.0.19\"\n在安装新版本前检查您的系统"
-      },
-      "1.0.8": {
-        "en": "correct changes for issue from check and sevice bot",
-        "de": "korrekte änderungen bei der ausgabe von check und sepvice bot",
-        "ru": "правильные изменения для выдачи от check and sevice bot",
-        "pt": "alterações corretas para o problema de verificação e sevice bot",
-        "nl": "correcte wijzigingen voor probleem van controle en sevice bot",
-        "fr": "corrects changements pour l'émission de check et sevice bot",
-        "it": "modifiche corrette per emissione da controllo e sevice bot",
-        "es": "cambios correctos para el problema desde cheque y bot sevice",
-        "pl": "prawidłowe zmiany do wydania z check i sevice bot",
-        "uk": "виправлені зміни для випуску з перевірки та sevice bot",
-        "zh-cn": "校正检查和sevice boot 的更改"
       }
     },
     "titleLang": {
