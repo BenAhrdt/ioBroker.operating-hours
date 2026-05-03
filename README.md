@@ -78,6 +78,8 @@ To reset the counted operating hours just write one numeric state to 0.
 ### Older entries
 [here](OLD_CHANGELOG.md)
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
