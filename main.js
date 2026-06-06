@@ -277,7 +277,7 @@ class OperatingHours extends utils.Adapter {
             }
         }
         if (countingEnabled) {
-            this.timeouts.countingTimeout = setTimeout(this.counting.bind(this), this.config.refreshRate);
+            this.timeouts.countingTimeout = this.setTimeout(this.counting.bind(this), this.config.refreshRate);
         }
     }
 
@@ -538,7 +538,7 @@ class OperatingHours extends utils.Adapter {
                             );
                             this.configedChannels[channel].timestamp = state.ts;
                             if (!this.timeouts.countingTimeout) {
-                                this.timeouts.countingTimeout = setTimeout(
+                                this.timeouts.countingTimeout = this.setTimeout(
                                     this.counting.bind(this),
                                     this.config.refreshRate,
                                 );

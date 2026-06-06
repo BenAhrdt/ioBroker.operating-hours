@@ -1,0 +1,16 @@
+{
+    "DeviceObject": "Apparaatobject",
+    "administrative": "administratief",
+    "automaticReset": "automatische reset",
+    "automaticResetTooltip": "plaats de gewenste cronJob, die automatisch de bedrijfsuren reset.",
+    "configuration": "configuratie",
+    "deviceObject": "Apparaatobject",
+    "mainInformationText": "Er zijn geen externe toestanden vereist om de bedrijfsuren te meten. ",
+    "mainInformations": "belangrijkste informatie:",
+    "operating-hours adapter settings": "Adapterinstellingen voor bedrijfsuren",
+    "operatingHours": "per uur",
+    "refreshRate": "vernieuwingsfrequentie",
+    "refreshRateTooltip": "hier kunt u de verversingssnelheid instellen waarmee de bedrijfsuren moeten worden bijgewerkt",
+    "states": "staten",
+    "valueStates": "werkelijke waarden"
+}

@@ -1,0 +1,16 @@
+{
+    "DeviceObject": "Device Object",
+    "administrative": "administrative",
+    "automaticReset": "automatic reset",
+    "automaticResetTooltip": "inset the desired cronJob, wich resets automaticaly the operatinghours.",
+    "configuration": "configuration",
+    "deviceObject": "Device Object",
+    "mainInformationText": "No external states are required to measure the operating hours. The names entered below are generated as states in the objects of the adapter and are used to activate and reset the operating hours counter. (RESET => simply set a value (e.g. the value hour) to 0) Using the generated states, you can easily implement activation with complex conditions in a script.",
+    "mainInformations": "main informations",
+    "operating-hours adapter settings": "Adapter settings for operating-hours",
+    "operatingHours": "perating Hours",
+    "refreshRate": "refresh rate",
+    "refreshRateTooltip": "here you can set the refresh rate, with which the operating hours should be updated",
+    "states": "states",
+    "valueStates": "actual values"
+}
