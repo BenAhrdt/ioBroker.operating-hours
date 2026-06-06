@@ -1,7 +1,7 @@
 {
     "type": "panel",
     "i18n": true,
-    "items":{
+    "items": {
         "informationHeader": {
             "newLine": true,
             "type": "header",
@@ -13,7 +13,7 @@
             "lg": 12,
             "xl": 12
         },
-        "Information1":{
+        "Information1": {
             "newLine":true,
             "type": "staticText",
             "label": "mainInformationText",
@@ -62,7 +62,7 @@
             "lg": 1,
             "xl": 1
         },
-        "statesTable":{
+        "statesTable": {
             "type":"table",
             "allowAddByFilter": true,
             "items":[
