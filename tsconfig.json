@@ -6,6 +6,8 @@
 		// do not compile anything, this file is just to configure type checking
 		"noEmit": true,
 
+		"types": ["node"],
+
 		// check JS files
 		"allowJs": true,
 		"checkJs": true,
