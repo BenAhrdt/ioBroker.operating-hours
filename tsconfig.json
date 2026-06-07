@@ -12,9 +12,8 @@
 		"allowJs": true,
 		"checkJs": true,
 
-		"module": "commonjs",
-		"ignoreDeprecations": "5.0",
-		"moduleResolution": "node",
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
 		"esModuleInterop": true,
 		// this is necessary for the automatic typing of the adapter config
 		"resolveJsonModule": true,
