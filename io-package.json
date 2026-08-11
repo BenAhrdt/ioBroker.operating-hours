@@ -11,7 +11,7 @@
         "nl": "debug-logboek verwijderen",
         "fr": "supprimer l'enregistrement de débogage",
         "it": "rimuovere debug logging",
-        "es": "remove debug logging",
+        "es": "eliminar el registro de depuración",
         "pl": "usuń logowanie debugowania",
         "uk": "видалити дебюг карбування",
         "zh-cn": "删除调试日志"
@@ -24,7 +24,7 @@
         "nl": "device Manager implementeren (Admin 7.8.20. vereist)",
         "fr": "implement device Manager (Admin 7.8.20 requis)",
         "it": "implementare il dispositivo Manager (Admin 7.8.20 richiesto)",
-        "es": "implement device Manager (Admin 7.8.20 required)",
+        "es": "implementar el administrador de dispositivos (se requiere Admin 7.8.20)",
         "pl": "menedżer urządzeń implementacyjnych (wymagany admin 7.8.20)",
         "uk": "реалізація диспетчера пристроїв (Admin 7.8.20 потрібно)",
         "zh-cn": "执行设备管理器(需要admin 7.8.20)"
@@ -70,7 +70,7 @@
       },
       "1.2.0": {
         "en": "update eslint",
-        "de": "update eslint",
+        "de": "ESLint aktualisieren",
         "ru": "обновление eslint",
         "pt": "atualização eslint",
         "nl": "eslint bijwerken",
@@ -89,8 +89,8 @@
         "nl": "Veranderde schema en responsieve tags",
         "fr": "Schéma modifié et balises réactives",
         "it": "Cambiato schema e tag responsive",
-        "es": "Cambio de esquema y etiquetas sensibles",
-        "pl": "Zmieniony Schema i odpowiedzi tagi",
+        "es": "actualizar ESLint",
+        "pl": "zaktualizować ESLint",
         "uk": "Змінені мітки Schema і чуйні теги",
         "zh-cn": "更改 Schema 和响应标记"
       }
