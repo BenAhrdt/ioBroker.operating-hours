@@ -27,7 +27,7 @@
     "@iobroker/adapter-core": "^3.4.3",
     "@iobroker/dm-utils": "^3.2.1",
     "lodash": "^4.17.21",
-    "node-schedule": "^2.1.1"
+    "node-schedule": "^2.1.2"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^5.2.1",
